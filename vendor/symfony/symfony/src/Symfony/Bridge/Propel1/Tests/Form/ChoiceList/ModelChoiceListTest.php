@@ -204,9 +204,12 @@ class ModelChoiceListTest extends Propel1TestCase
         $this->assertEquals(array('1'), $choiceList->getValuesForChoices(array($choosenItem)));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacygetIndicesForChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -231,9 +234,12 @@ class ModelChoiceListTest extends Propel1TestCase
         $this->assertEquals(array(1, 2), $choiceList->getIndicesForChoices(array($item1, $item2)));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyDifferentEqualObjectsAreChoosen()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -255,9 +261,12 @@ class ModelChoiceListTest extends Propel1TestCase
         $this->assertEquals(array(1), $choiceList->getIndicesForChoices(array($choosenItem)));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForNullChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

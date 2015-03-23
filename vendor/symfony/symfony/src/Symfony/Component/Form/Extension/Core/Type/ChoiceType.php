@@ -110,7 +110,11 @@ class ChoiceType extends AbstractType
         // avoid making the type check inside the closure.
         if ($options['multiple']) {
             $view->vars['is_selected'] = function ($choice, array $values) {
+<<<<<<< HEAD
                 return in_array($choice, $values, true);
+=======
+                return false !== array_search($choice, $values, true);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             };
         } else {
             $view->vars['is_selected'] = function ($choice, $value) {
@@ -134,7 +138,11 @@ class ChoiceType extends AbstractType
             // Add "[]" to the name in case a select tag with multiple options is
             // displayed. Otherwise only one of the selected options is sent in the
             // POST request.
+<<<<<<< HEAD
             $view->vars['full_name'] .= '[]';
+=======
+            $view->vars['full_name'] = $view->vars['full_name'].'[]';
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 

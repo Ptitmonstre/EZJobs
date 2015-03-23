@@ -94,6 +94,7 @@ class ScriptHandler
     }
 
     /**
+<<<<<<< HEAD
      * Sets up deployment target specific features.
      * Could be custom web server configs, boot command files etc.
      *
@@ -117,6 +118,8 @@ class ScriptHandler
     }
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * Clears the Symfony cache.
      *
      * @param $event CommandEvent A instance

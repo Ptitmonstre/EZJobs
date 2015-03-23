@@ -12,6 +12,7 @@
 namespace Symfony\Bundle\FrameworkBundle\Tests\Functional\Bundle\TestBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Bundle\FrameworkBundle\Tests\Functional\Bundle\TestBundle\DependencyInjection\Config\CustomConfig;
 
@@ -26,4 +27,9 @@ class TestBundle extends Bundle
 
         $extension->setCustomConfig(new CustomConfig());
     }
+=======
+
+class TestBundle extends Bundle
+{
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

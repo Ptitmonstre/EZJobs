@@ -9,4 +9,8 @@ As of v3.0.0 of the bundle, the release cycle is de-synchronized from the
 framework's. It means you can just require "sensio/framework-extra-bundle":
 "~3.0" in your composer.json and Composer will automatically pick the latest
 version of the bundle that works with your current version of Symfony. The
+<<<<<<< HEAD
 minimum version of Symfony2 for this workflow is 2.3.
+=======
+minimum version of Symfony2 for this workflow is 2.4.0.
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2

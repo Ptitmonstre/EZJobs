@@ -23,8 +23,12 @@
         "ruflin/elastica": "0.90.*",
         "doctrine/couchdb": "~1.0@dev",
         "aws/aws-sdk-php": "~2.4, >2.4.8",
+<<<<<<< HEAD
         "videlalvaro/php-amqplib": "~2.4",
         "swiftmailer/swiftmailer": "~5.3"
+=======
+        "videlalvaro/php-amqplib": "~2.4"
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     },
     "suggest": {
         "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
@@ -45,10 +49,15 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.13.x-dev"
         }
     },
     "scripts": {
         "test": "phpunit"
+=======
+            "dev-master": "1.12.x-dev"
+        }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 }

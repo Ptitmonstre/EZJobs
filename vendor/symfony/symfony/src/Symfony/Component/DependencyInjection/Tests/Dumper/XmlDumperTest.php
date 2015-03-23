@@ -25,9 +25,18 @@ class XmlDumperTest extends \PHPUnit_Framework_TestCase
 
     public function testDump()
     {
+<<<<<<< HEAD
         $dumper = new XmlDumper(new ContainerBuilder());
 
         $this->assertXmlStringEqualsXmlFile(self::$fixturesPath.'/xml/services1.xml', $dumper->dump(), '->dump() dumps an empty container as an empty XML file');
+=======
+        $dumper = new XmlDumper($container = new ContainerBuilder());
+
+        $this->assertXmlStringEqualsXmlFile(self::$fixturesPath.'/xml/services1.xml', $dumper->dump(), '->dump() dumps an empty container as an empty XML file');
+
+        $container = new ContainerBuilder();
+        $dumper = new XmlDumper($container);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function testExportParameters()
@@ -128,6 +137,7 @@ class XmlDumperTest extends \PHPUnit_Framework_TestCase
 ", include $fixturesPath.'/containers/container16.php'),
         );
     }
+<<<<<<< HEAD
 
     /**
      * @dataProvider provideCompiledContainerData
@@ -150,4 +160,6 @@ class XmlDumperTest extends \PHPUnit_Framework_TestCase
             array('container14'),
         );
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

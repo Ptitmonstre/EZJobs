@@ -98,12 +98,20 @@ class LintCommandTest extends \PHPUnit_Framework_TestCase
         return $filename;
     }
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->files = array();
     }
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         foreach ($this->files as $file) {
             if (file_exists($file)) {

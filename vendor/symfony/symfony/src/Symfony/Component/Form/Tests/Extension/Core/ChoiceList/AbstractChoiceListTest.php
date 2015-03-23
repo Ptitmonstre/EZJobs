@@ -161,9 +161,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->values, $this->list->getValues());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -172,9 +175,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index1, $this->index2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesPreservesKeys()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -183,9 +189,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array(5 => $this->index1, 8 => $this->index2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesPreservesOrder()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -194,9 +203,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index2, $this->index1), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesIgnoresNonExistingChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -205,9 +217,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index1, $this->index2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesEmpty()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -215,9 +230,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array(), $this->list->getIndicesForChoices(array()));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValues()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -227,9 +245,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index1, $this->index2), $this->list->getIndicesForValues($values));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValuesPreservesKeys()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -239,9 +260,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array(5 => $this->index1, 8 => $this->index2), $this->list->getIndicesForValues($values));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValuesPreservesOrder()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -250,9 +274,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index2, $this->index1), $this->list->getIndicesForValues($values));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValuesIgnoresNonExistingValues()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -261,9 +288,12 @@ abstract class AbstractChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array($this->index1, $this->index2), $this->list->getIndicesForValues($values));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValuesEmpty()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

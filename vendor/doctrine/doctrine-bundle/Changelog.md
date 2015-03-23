@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 1.4.0 (2015-02-28)
 
 Features:
@@ -14,6 +15,8 @@ Bugfix:
 * Close connections and clear managers on shutdown. This avoids leaking connections in tests.
 * Added an exception when the ORM layer is configured but not DBAL
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 ## 1.3.0 (2014-11-28)
 
 Features:

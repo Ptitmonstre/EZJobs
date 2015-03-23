@@ -115,7 +115,11 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
 
         if (false === $name) {
             $name = strtr($file, '\\', '/');
+<<<<<<< HEAD
             $name = substr($name, strrpos($name, '/') + 1);
+=======
+            $name = substr($file, strrpos($file, '/') + 1);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         $this->data[] = compact('data', 'name', 'file', 'line', 'fileExcerpt');

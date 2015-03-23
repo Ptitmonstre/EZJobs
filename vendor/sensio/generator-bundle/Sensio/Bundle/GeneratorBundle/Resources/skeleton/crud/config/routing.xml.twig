@@ -18,8 +18,14 @@
         <default key="_controller">{{ bundle }}:{{ entity }}:new</default>
     </route>
 
+<<<<<<< HEAD
     <route id="{{ route_name_prefix }}_create" path="/create" methods="POST">
         <default key="_controller">{{ bundle }}:{{ entity }}:create</default>
+=======
+    <route id="{{ route_name_prefix }}_create" path="/create">
+        <default key="_controller">{{ bundle }}:{{ entity }}:create</default>
+        <requirement key="_method">post</requirement>
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     </route>
 {% endif %}
 
@@ -28,14 +34,26 @@
         <default key="_controller">{{ bundle }}:{{ entity }}:edit</default>
     </route>
 
+<<<<<<< HEAD
     <route id="{{ route_name_prefix }}_update" path="/{id}/update" methods="POST|PUT">
         <default key="_controller">{{ bundle }}:{{ entity }}:update</default>
+=======
+    <route id="{{ route_name_prefix }}_update" path="/{id}/update">
+        <default key="_controller">{{ bundle }}:{{ entity }}:update</default>
+        <requirement key="_method">post|put</requirement>
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     </route>
 {% endif %}
 
 {% if 'delete' in actions %}
+<<<<<<< HEAD
     <route id="{{ route_name_prefix }}_delete" path="/{id}/delete" methods="POST|DELETE">
         <default key="_controller">{{ bundle }}:{{ entity }}:delete</default>
+=======
+    <route id="{{ route_name_prefix }}_delete" path="/{id}/delete">
+        <default key="_controller">{{ bundle }}:{{ entity }}:delete</default>
+        <requirement key="_method">post|delete</requirement>
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     </route>
 {% endif %}
 {% endblock body %}

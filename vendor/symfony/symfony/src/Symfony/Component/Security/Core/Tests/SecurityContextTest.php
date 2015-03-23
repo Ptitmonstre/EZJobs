@@ -21,7 +21,11 @@ class SecurityContextTest extends \PHPUnit_Framework_TestCase
     private $authorizationChecker;
     private $securityContext;
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->tokenStorage = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface');
         $this->authorizationChecker = $this->getMock('Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface');

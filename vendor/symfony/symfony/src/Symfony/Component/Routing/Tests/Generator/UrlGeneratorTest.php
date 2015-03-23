@@ -461,6 +461,7 @@ class UrlGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($generator->generate('test', array('foo' => 'baz'), false));
     }
 
+<<<<<<< HEAD
     public function testHostIsCaseInsensitive()
     {
         $routes = $this->getRoutes('test', new Route('/', array(), array('locale' => 'en|de|fr'), array(), '{locale}.FooBar.com'));
@@ -468,6 +469,8 @@ class UrlGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('//EN.FooBar.com/app.php/', $generator->generate('test', array('locale' => 'EN'), UrlGeneratorInterface::NETWORK_PATH));
     }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testGenerateNetworkPathBC()
     {
         $routes = $this->getRoutes('test', new Route('/{name}', array(), array('_scheme' => 'http'), array(), '{locale}.example.com'));

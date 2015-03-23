@@ -76,10 +76,13 @@ class DoctrineExtension extends AbstractDoctrineExtension
         }
 
         if (!empty($config['orm'])) {
+<<<<<<< HEAD
             if (empty($config['dbal'])) {
                 throw new \LogicException('Configuring the ORM layer requires to configure the DBAL layer as well.');
             }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             $this->ormLoad($config['orm'], $container);
         }
 
@@ -132,6 +135,7 @@ class DoctrineExtension extends AbstractDoctrineExtension
         $container->setParameter('doctrine.connections', $connections);
         $container->setParameter('doctrine.default_connection', $this->defaultConnection);
 
+<<<<<<< HEAD
         $def = $container->getDefinition('doctrine.dbal.connection');
         if (method_exists($def, 'setFactory')) {
             // to be inlined in dbal.xml when dependency on Symfony DependencyInjection is bumped to 2.6
@@ -142,6 +146,8 @@ class DoctrineExtension extends AbstractDoctrineExtension
             $def->setFactoryMethod('createConnection');
         }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         foreach ($config['connections'] as $name => $connection) {
             $this->loadDbalConnection($name, $connection, $container);
         }
@@ -357,6 +363,7 @@ class DoctrineExtension extends AbstractDoctrineExtension
             $config['entity_managers'] = $this->fixManagersAutoMappings($config['entity_managers'], $container->getParameter('kernel.bundles'));
         }
 
+<<<<<<< HEAD
         $def = $container->getDefinition('doctrine.orm.entity_manager.abstract');
         if (method_exists($def, 'setFactory')) {
             // to be inlined in dbal.xml when dependency on Symfony DependencyInjection is bumped to 2.6
@@ -367,6 +374,8 @@ class DoctrineExtension extends AbstractDoctrineExtension
             $def->setFactoryMethod('create');
         }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         foreach ($config['entity_managers'] as $name => $entityManager) {
             $entityManager['name'] = $name;
             $this->loadOrmEntityManager($entityManager, $container);
@@ -540,7 +549,11 @@ class DoctrineExtension extends AbstractDoctrineExtension
      *             alias: BundleAlias
      *         arbitrary_key:
      *             type: xml
+<<<<<<< HEAD
      *             dir: %kernel.root_dir%/../src/vendor/DoctrineExtensions/lib/DoctrineExtensions/Entities
+=======
+     *             dir: %kernel.dir%/../src/vendor/DoctrineExtensions/lib/DoctrineExtensions/Entities
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *             prefix: DoctrineExtensions\Entities\
      *             alias: DExt
      *
@@ -716,8 +729,13 @@ class DoctrineExtension extends AbstractDoctrineExtension
     protected function loadCacheDriver($driverName, $entityManagerName, array $driverMap, ContainerBuilder $container)
     {
         if (!empty($driverMap['cache_provider'])) {
+<<<<<<< HEAD
             $aliasId = $this->getObjectManagerElementName(sprintf('%s_%s', $entityManagerName, $driverName));
             $serviceId = sprintf('doctrine_cache.providers.%s', $driverMap['cache_provider']);
+=======
+            $aliasId = $this->getObjectManagerElementName($driverName);
+            $serviceId = printf('doctrine_cache.providers.%s', $driverMap['cache_provider']);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
             $container->setAlias($aliasId, new Alias($serviceId, false));
 

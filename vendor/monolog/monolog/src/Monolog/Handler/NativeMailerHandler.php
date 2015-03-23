@@ -40,12 +40,15 @@ class NativeMailerHandler extends MailHandler
     protected $headers = array();
 
     /**
+<<<<<<< HEAD
      * Optional parameters for the message
      * @var array
      */
     protected $parameters = array();
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * The wordwrap length for the message
      * @var integer
      */
@@ -84,7 +87,11 @@ class NativeMailerHandler extends MailHandler
      * Add headers to the message
      *
      * @param  string|array $headers Custom added headers
+<<<<<<< HEAD
      * @return self
+=======
+     * @return null
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function addHeader($headers)
     {
@@ -94,6 +101,7 @@ class NativeMailerHandler extends MailHandler
             }
             $this->headers[] = $header;
         }
+<<<<<<< HEAD
 
         return $this;
     }
@@ -109,6 +117,8 @@ class NativeMailerHandler extends MailHandler
         $this->parameters = array_merge($this->parameters, (array) $parameters);
 
         return $this;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**
@@ -123,7 +133,11 @@ class NativeMailerHandler extends MailHandler
             $headers .= 'MIME-Version: 1.0' . "\r\n";
         }
         foreach ($this->to as $to) {
+<<<<<<< HEAD
             mail($to, $this->subject, $content, $headers, implode(' ', $this->parameters));
+=======
+            mail($to, $this->subject, $content, $headers);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 
@@ -166,7 +180,11 @@ class NativeMailerHandler extends MailHandler
     public function setEncoding($encoding)
     {
         if (strpos($encoding, "\n") !== false || strpos($encoding, "\r") !== false) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('The encoding can not contain newline characters to prevent email header injection');
+=======
+            throw new \InvalidArgumentException('The content type can not contain newline characters to prevent email header injection');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         $this->encoding = $encoding;

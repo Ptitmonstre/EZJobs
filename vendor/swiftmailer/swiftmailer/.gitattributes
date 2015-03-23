@@ -4,6 +4,9 @@
 *.pub -crlf
 *.priv -crlf
 *.txt -crlf
+<<<<<<< HEAD
 
 # ignore /notes in the git-generated distributed .zip archive
 /notes export-ignore
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2

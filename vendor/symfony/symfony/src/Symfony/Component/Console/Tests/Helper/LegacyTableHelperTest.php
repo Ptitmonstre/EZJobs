@@ -14,9 +14,12 @@ namespace Symfony\Component\Console\Tests\Helper;
 use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Output\StreamOutput;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 class LegacyTableHelperTest extends \PHPUnit_Framework_TestCase
 {
     protected $stream;
@@ -259,7 +262,11 @@ TABLE
 
     public function testRenderMultiByte()
     {
+<<<<<<< HEAD
         if (!function_exists('mb_strwidth')) {
+=======
+        if (!function_exists('mb_strlen')) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             $this->markTestSkipped('The "mbstring" extension is not available');
         }
 
@@ -284,6 +291,7 @@ TABLE;
         $this->assertEquals($expected, $this->getOutputContent($output));
     }
 
+<<<<<<< HEAD
     public function testRenderFullWidthCharacters()
     {
         if (!function_exists('mb_strwidth')) {
@@ -311,6 +319,8 @@ TABLE;
         $this->assertEquals($expected, $this->getOutputContent($output));
     }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     protected function getOutputStream()
     {
         return new StreamOutput($this->stream, StreamOutput::VERBOSITY_NORMAL, false);

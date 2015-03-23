@@ -206,12 +206,21 @@ class NativeRequestHandlerTest extends AbstractRequestHandlerTest
         return new NativeRequestHandler($this->serverParams);
     }
 
+<<<<<<< HEAD
     protected function getMockFile($suffix = '')
     {
         return array(
             'name' => 'upload'.$suffix.'.txt',
             'type' => 'text/plain',
             'tmp_name' => 'owfdskjasdfsa'.$suffix,
+=======
+    protected function getMockFile()
+    {
+        return array(
+            'name' => 'upload.txt',
+            'type' => 'text/plain',
+            'tmp_name' => 'owfdskjasdfsa',
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             'error' => UPLOAD_ERR_OK,
             'size' => 100,
         );

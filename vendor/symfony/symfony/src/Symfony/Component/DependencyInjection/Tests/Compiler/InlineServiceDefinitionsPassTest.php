@@ -237,6 +237,7 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($ref, $calls[0][1][0]);
     }
 
+<<<<<<< HEAD
     public function testProcessDoesNotInlineFactories()
     {
         $container = new ContainerBuilder();
@@ -254,6 +255,8 @@ class InlineServiceDefinitionsPassTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Symfony\Component\DependencyInjection\Reference', $factory[0]);
     }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     protected function process(ContainerBuilder $container)
     {
         $repeatedPass = new RepeatedPass(array(new AnalyzeServiceReferencesPass(), new InlineServiceDefinitionsPass()));

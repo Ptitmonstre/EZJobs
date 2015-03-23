@@ -98,6 +98,11 @@ class StaticMethodLoaderTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped('Could not disable error reporting');
         }
 
+<<<<<<< HEAD
+=======
+        include __DIR__.'/AbstractStaticMethodLoader.php';
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $metadata = new ClassMetadata(__NAMESPACE__.'\AbstractStaticMethodLoader');
 
         $loader = new StaticMethodLoader('loadMetadata');

@@ -23,7 +23,10 @@ use Doctrine\ORM\Proxy\Autoloader;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\IntrospectableContainerInterface;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\DoctrineValidationPass;
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterEventListenersAndSubscribersPass;
@@ -114,6 +117,7 @@ class DoctrineBundle extends Bundle
             spl_autoload_unregister($this->autoloader);
             $this->autoloader = null;
         }
+<<<<<<< HEAD
 
         // Clear all entity managers to clear references to entities for GC
         if ($this->container->hasParameter('doctrine.entity_managers')) {
@@ -132,6 +136,8 @@ class DoctrineBundle extends Bundle
                 }
             }
         }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**

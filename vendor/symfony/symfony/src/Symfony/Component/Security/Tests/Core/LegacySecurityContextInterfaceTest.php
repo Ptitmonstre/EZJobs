@@ -14,9 +14,12 @@ namespace Symfony\Component\Security\Tests\Core;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Security;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 class LegacySecurityContextInterfaceTest extends \PHPUnit_Framework_TestCase
 {
     /**

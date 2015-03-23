@@ -60,11 +60,19 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     protected $startTime;
     protected $loadClassCache;
 
+<<<<<<< HEAD
     const VERSION = '2.6.5';
     const VERSION_ID = '20605';
     const MAJOR_VERSION = '2';
     const MINOR_VERSION = '6';
     const RELEASE_VERSION = '5';
+=======
+    const VERSION = '2.6.4';
+    const VERSION_ID = '20604';
+    const MAJOR_VERSION = '2';
+    const MINOR_VERSION = '6';
+    const RELEASE_VERSION = '4';
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     const EXTRA_VERSION = '';
 
     /**
@@ -605,7 +613,11 @@ abstract class Kernel implements KernelInterface, TerminableInterface
     {
         foreach (array('cache' => $this->getCacheDir(), 'logs' => $this->getLogDir()) as $name => $dir) {
             if (!is_dir($dir)) {
+<<<<<<< HEAD
                 if (false === @mkdir($dir, 0777, true) && !is_dir($dir)) {
+=======
+                if (false === @mkdir($dir, 0777, true)) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     throw new \RuntimeException(sprintf("Unable to create the %s directory (%s)\n", $name, $dir));
                 }
             } elseif (!is_writable($dir)) {

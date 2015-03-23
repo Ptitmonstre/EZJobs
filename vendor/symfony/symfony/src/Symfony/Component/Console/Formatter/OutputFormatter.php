@@ -150,10 +150,13 @@ class OutputFormatter implements OutputFormatterInterface
             $pos = $match[1];
             $text = $match[0];
 
+<<<<<<< HEAD
             if (0 != $pos && '\\' == $message[$pos - 1]) {
                 continue;
             }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             // add the text up to the next tag
             $output .= $this->applyCurrentStyle(substr($message, $offset, $pos - $offset));
             $offset = $pos + strlen($text);
@@ -168,6 +171,12 @@ class OutputFormatter implements OutputFormatterInterface
             if (!$open && !$tag) {
                 // </>
                 $this->styleStack->pop();
+<<<<<<< HEAD
+=======
+            } elseif ($pos && '\\' == $message[$pos - 1]) {
+                // escaped tag
+                $output .= $this->applyCurrentStyle($text);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             } elseif (false === $style = $this->createStyleFromString(strtolower($tag))) {
                 $output .= $this->applyCurrentStyle($text);
             } elseif ($open) {

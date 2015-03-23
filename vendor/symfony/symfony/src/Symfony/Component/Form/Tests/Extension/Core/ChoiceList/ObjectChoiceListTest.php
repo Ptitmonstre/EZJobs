@@ -185,9 +185,12 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
         );
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesWithValuePath()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -205,9 +208,12 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
         $this->assertSame(array($this->index1, $this->index2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesWithValuePathPreservesKeys()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -224,9 +230,12 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
         $this->assertSame(array(5 => $this->index1, 8 => $this->index2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesWithValuePathPreservesOrder()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -243,9 +252,12 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
         $this->assertSame(array($this->index2, $this->index1), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoicesWithValuePathIgnoresNonExistingChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

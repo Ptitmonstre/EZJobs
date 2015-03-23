@@ -19,9 +19,12 @@
         "php": ">=5.3.3",
         "swiftmailer/swiftmailer": ">=4.2.0,<6.0-dev"
     },
+<<<<<<< HEAD
     "require-dev": {
         "symfony/phpunit-bridge": "~2.7"
     },
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     "suggest": {
         "symfony/http-kernel": ""
     },

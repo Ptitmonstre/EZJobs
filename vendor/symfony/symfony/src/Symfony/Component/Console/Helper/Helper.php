@@ -43,7 +43,11 @@ abstract class Helper implements HelperInterface
     }
 
     /**
+<<<<<<< HEAD
      * Returns the length of a string, using mb_strwidth if it is available.
+=======
+     * Returns the length of a string, using mb_strlen if it is available.
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *
      * @param string $string The string to check its length
      *

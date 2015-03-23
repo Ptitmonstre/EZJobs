@@ -132,7 +132,11 @@ class IsbnValidator extends ConstraintValidator
                 return Isbn::INVALID_CHARACTERS_ERROR;
             }
 
+<<<<<<< HEAD
             $checkSum += $digit * (10 - $i);
+=======
+            $checkSum += $digit * intval(10 - $i);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         if (isset($isbn{$i})) {

@@ -117,10 +117,15 @@ class DoctrineDataCollector extends DataCollector
     private function sanitizeQuery($connectionName, $query)
     {
         $query['explainable'] = true;
+<<<<<<< HEAD
         if (!is_array($query['params'])) {
             $query['params'] = array($query['params']);
         }
         foreach ($query['params'] as $j => $param) {
+=======
+        $query['params'] = (array) $query['params'];
+        foreach ($query['params'] as $j => &$param) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             if (isset($query['types'][$j])) {
                 // Transform the param according to the type
                 $type = $query['types'][$j];
@@ -133,7 +138,11 @@ class DoctrineDataCollector extends DataCollector
                 }
             }
 
+<<<<<<< HEAD
             list($query['params'][$j], $explainable) = $this->sanitizeParam($param);
+=======
+            list($param, $explainable) = $this->sanitizeParam($param);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             if (!$explainable) {
                 $query['explainable'] = false;
             }

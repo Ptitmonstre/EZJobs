@@ -13,9 +13,12 @@ namespace Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler;
 
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\LegacyPdoSessionHandler;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 class LegacyPdoSessionHandlerTest extends \PHPUnit_Framework_TestCase
 {
     private $pdo;

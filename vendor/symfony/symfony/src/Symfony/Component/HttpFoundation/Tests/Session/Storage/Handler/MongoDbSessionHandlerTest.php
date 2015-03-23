@@ -40,7 +40,10 @@ class MongoDbSessionHandlerTest extends \PHPUnit_Framework_TestCase
             'id_field' => '_id',
             'data_field' => 'data',
             'time_field' => 'time',
+<<<<<<< HEAD
             'expiry_field' => 'expires_at',
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             'database' => 'sf2-test',
             'collection' => 'session-test',
         );
@@ -74,6 +77,7 @@ class MongoDbSessionHandlerTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->storage->close(), 'The "close" method should always return true');
     }
 
+<<<<<<< HEAD
     public function testRead()
     {
         $collection = $this->createMongoCollectionMock();
@@ -110,6 +114,8 @@ class MongoDbSessionHandlerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('bar', $this->storage->read('foo'));
     }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testWrite()
     {
         $collection = $this->createMongoCollectionMock();
@@ -131,13 +137,19 @@ class MongoDbSessionHandlerTest extends \PHPUnit_Framework_TestCase
                 $data = $updateData['$set'];
             }));
 
+<<<<<<< HEAD
         $expectedExpiry = time() + (int) ini_get('session.gc_maxlifetime');
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $this->assertTrue($this->storage->write('foo', 'bar'));
 
         $this->assertEquals('bar', $data[$this->options['data_field']]->bin);
         $that->assertInstanceOf('MongoDate', $data[$this->options['time_field']]);
+<<<<<<< HEAD
         $this->assertInstanceOf('MongoDate', $data[$this->options['expiry_field']]);
         $this->assertGreaterThanOrEqual($expectedExpiry, $data[$this->options['expiry_field']]->sec);
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function testWriteWhenUsingExpiresField()
@@ -232,13 +244,57 @@ class MongoDbSessionHandlerTest extends \PHPUnit_Framework_TestCase
         $collection->expects($this->once())
             ->method('remove')
             ->will($this->returnCallback(function ($criteria) use ($that) {
+<<<<<<< HEAD
                 $that->assertInstanceOf('MongoDate', $criteria[$that->options['expiry_field']]['$lt']);
                 $that->assertGreaterThanOrEqual(time() - 1, $criteria[$that->options['expiry_field']]['$lt']->sec);
+=======
+                $that->assertInstanceOf('MongoDate', $criteria[$that->options['time_field']]['$lt']);
+                $that->assertGreaterThanOrEqual(time() - 1, $criteria[$that->options['time_field']]['$lt']->sec);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }));
 
         $this->assertTrue($this->storage->gc(1));
     }
 
+<<<<<<< HEAD
+=======
+    public function testGcWhenUsingExpiresField()
+    {
+        $this->options = array(
+            'id_field' => '_id',
+            'data_field' => 'data',
+            'time_field' => 'time',
+            'database' => 'sf2-test',
+            'collection' => 'session-test',
+            'expiry_field' => 'expiresAt',
+        );
+
+        $this->storage = new MongoDbSessionHandler($this->mongo, $this->options);
+
+        $collection = $this->createMongoCollectionMock();
+
+        $this->mongo->expects($this->never())
+            ->method('selectCollection');
+
+        $that = $this;
+
+        $collection->expects($this->never())
+            ->method('remove');
+
+        $this->assertTrue($this->storage->gc(1));
+    }
+
+    public function testGetConnection()
+    {
+        $method = new \ReflectionMethod($this->storage, 'getMongo');
+        $method->setAccessible(true);
+
+        $mongoClass = (version_compare(phpversion('mongo'), '1.3.0', '<')) ? '\Mongo' : '\MongoClient';
+
+        $this->assertInstanceOf($mongoClass, $method->invoke($this->storage));
+    }
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     private function createMongoCollectionMock()
     {
         $mongoClient = $this->getMockBuilder('MongoClient')

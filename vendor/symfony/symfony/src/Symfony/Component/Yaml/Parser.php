@@ -52,6 +52,7 @@ class Parser
      */
     public function parse($value, $exceptionOnInvalidType = false, $objectSupport = false, $objectForMap = false)
     {
+<<<<<<< HEAD
         if (!preg_match('//u', $value)) {
             throw new ParseException('The YAML value does not appear to be valid UTF-8.');
         }
@@ -59,6 +60,15 @@ class Parser
         $this->currentLine = '';
         $value = $this->cleanup($value);
         $this->lines = explode("\n", $value);
+=======
+        $this->currentLineNb = -1;
+        $this->currentLine = '';
+        $this->lines = explode("\n", $this->cleanup($value));
+
+        if (!preg_match('//u', $value)) {
+            throw new ParseException('The YAML value does not appear to be valid UTF-8.');
+        }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         if (function_exists('mb_internal_encoding') && ((int) ini_get('mbstring.func_overload')) & 2) {
             $mbEncoding = mb_internal_encoding();
@@ -233,8 +243,14 @@ class Parser
                     throw new ParseException('Multiple documents are not supported.');
                 }
 
+<<<<<<< HEAD
                 // 1-liner optionally followed by newline(s)
                 if ($this->lines[0] === trim($value)) {
+=======
+                // 1-liner optionally followed by newline
+                $lineCount = count($this->lines);
+                if (1 === $lineCount || (2 === $lineCount && empty($this->lines[1]))) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     try {
                         $value = Inline::parse($this->lines[0], $exceptionOnInvalidType, $objectSupport, $objectForMap, $this->refs);
                     } catch (ParseException $e) {
@@ -460,7 +476,11 @@ class Parser
         if (preg_match('/^'.self::FOLDED_SCALAR_PATTERN.'$/', $value, $matches)) {
             $modifiers = isset($matches['modifiers']) ? $matches['modifiers'] : '';
 
+<<<<<<< HEAD
             return $this->parseFoldedScalar($matches['separator'], preg_replace('#\d+#', '', $modifiers), (int) abs($modifiers));
+=======
+            return $this->parseFoldedScalar($matches['separator'], preg_replace('#\d+#', '', $modifiers), intval(abs($modifiers)));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         try {

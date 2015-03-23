@@ -122,9 +122,12 @@ abstract class AbstractLayoutTest extends \Symfony\Component\Form\Test\FormInteg
 
     abstract protected function setTheme(FormView $view, array $themes);
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyEnctype()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -136,9 +139,12 @@ abstract class AbstractLayoutTest extends \Symfony\Component\Form\Test\FormInteg
         $this->assertEquals('enctype="multipart/form-data"', $this->renderEnctype($form->createView()));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyNoEnctype()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -2113,6 +2119,7 @@ abstract class AbstractLayoutTest extends \Symfony\Component\Form\Test\FormInteg
         // no foo
         $this->assertNotContains('foo="', $html);
     }
+<<<<<<< HEAD
 
     public function testTranslatedAttributes()
     {
@@ -2127,4 +2134,6 @@ abstract class AbstractLayoutTest extends \Symfony\Component\Form\Test\FormInteg
         $this->assertMatchesXpath($html, '/form//input[@title="[trans]Foo[/trans]"]');
         $this->assertMatchesXpath($html, '/form//input[@placeholder="[trans]Bar[/trans]"]');
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

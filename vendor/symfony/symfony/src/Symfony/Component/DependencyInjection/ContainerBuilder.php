@@ -1004,7 +1004,13 @@ class ContainerBuilder extends Container implements TaggedContainerInterface
     public function resolveServices($value)
     {
         if (is_array($value)) {
+<<<<<<< HEAD
             $value = array_map(array($this, 'resolveServices'), $value);
+=======
+            foreach ($value as &$v) {
+                $v = $this->resolveServices($v);
+            }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         } elseif ($value instanceof Reference) {
             $value = $this->get((string) $value, $value->getInvalidBehavior());
         } elseif ($value instanceof Definition) {

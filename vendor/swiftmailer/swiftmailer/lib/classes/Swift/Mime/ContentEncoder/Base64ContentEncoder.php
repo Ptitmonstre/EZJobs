@@ -30,6 +30,7 @@ class Swift_Mime_ContentEncoder_Base64ContentEncoder extends Swift_Encoder_Base6
         }
 
         $remainder = 0;
+<<<<<<< HEAD
         $base64ReadBufferRemainderBytes = NULL;
 
         // To reduce memory usage, the output buffer is streamed to the input buffer like so:
@@ -66,6 +67,11 @@ class Swift_Mime_ContentEncoder_Base64ContentEncoder extends Swift_Encoder_Base6
             }
 
             $encoded = base64_encode($streamTheseBytes);
+=======
+
+        while (false !== $bytes = $os->read(8190)) {
+            $encoded = base64_encode($bytes);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             $encodedTransformed = '';
             $thisMaxLineLength = $maxLineLength - $remainder - $firstLineOffset;
 
@@ -84,10 +90,13 @@ class Swift_Mime_ContentEncoder_Base64ContentEncoder extends Swift_Encoder_Base6
             }
 
             $is->write($encodedTransformed);
+<<<<<<< HEAD
 
             if ($atEOF) {
                 break;
             }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 

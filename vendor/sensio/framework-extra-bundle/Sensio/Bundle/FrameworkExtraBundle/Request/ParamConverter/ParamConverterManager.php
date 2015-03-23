@@ -96,6 +96,7 @@ class ParamConverterManager
                 }
             }
         }
+<<<<<<< HEAD
     }
 
     /**
@@ -110,6 +111,22 @@ class ParamConverterManager
      * @param int                     $priority  The priority (between -10 and 10).
      * @param string                  $name      Name of the converter.
      */
+=======
+   }
+
+   /**
+    * Adds a parameter converter.
+    *
+    * Converters match either explicitly via $name or by iteration over all
+    * converters with a $priority. If you pass a $priority = null then the
+    * added converter will not be part of the iteration chain and can only
+    * be invoked explicitly.
+    *
+    * @param ParamConverterInterface $converter A ParamConverterInterface instance
+    * @param int                     $priority  The priority (between -10 and 10).
+    * @param string                  $name      Name of the converter.
+    */
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function add(ParamConverterInterface $converter, $priority = 0, $name = null)
     {
         if ($priority !== null) {

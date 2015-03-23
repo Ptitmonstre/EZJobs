@@ -91,7 +91,11 @@
 
         <service id="doctrine.orm.configuration" class="%doctrine.orm.configuration.class%" abstract="true" public="false" />
 
+<<<<<<< HEAD
         <service id="doctrine.orm.entity_manager.abstract" class="%doctrine.orm.entity_manager.class%" abstract="true" />
+=======
+        <service id="doctrine.orm.entity_manager.abstract" class="%doctrine.orm.entity_manager.class%" factory-class="%doctrine.orm.entity_manager.class%" factory-method="create" abstract="true" />
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         <!-- The configurator cannot be a private service -->
         <service id="doctrine.orm.manager_configurator.abstract" class="%doctrine.orm.manager_configurator.class%" abstract="true">

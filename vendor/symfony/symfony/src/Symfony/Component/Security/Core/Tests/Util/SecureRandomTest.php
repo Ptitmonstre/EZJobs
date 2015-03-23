@@ -41,7 +41,11 @@ class SecureRandomTest extends \PHPUnit_Framework_TestCase
 
         for ($j = 1; $j <= 5000; $j++) {
             $k = 4 * $j - 1;
+<<<<<<< HEAD
             ++$c[8 * $b[$k - 3] + 4 * $b[$k - 2] + 2 * $b[$k - 1] + $b[$k]];
+=======
+            $c[8 * $b[$k - 3] + 4 * $b[$k - 2] + 2 * $b[$k - 1] + $b[$k]] += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         $f = 0;
@@ -73,14 +77,22 @@ class SecureRandomTest extends \PHPUnit_Framework_TestCase
                 $run = 6;
             }
 
+<<<<<<< HEAD
             ++$runs[$run];
+=======
+            $runs[$run] += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         };
 
         $currentRun = 0;
         $lastBit = null;
         for ($i = 0; $i < 20000; $i++) {
             if ($lastBit === $b[$i]) {
+<<<<<<< HEAD
                 ++$currentRun;
+=======
+                $currentRun += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             } else {
                 if ($currentRun > 0) {
                     $addRun($currentRun);
@@ -115,7 +127,11 @@ class SecureRandomTest extends \PHPUnit_Framework_TestCase
         $lastBit = null;
         for ($i = 0; $i < 20000; $i++) {
             if ($lastBit === $b[$i]) {
+<<<<<<< HEAD
                 ++$currentRun;
+=======
+                $currentRun += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             } else {
                 if ($currentRun > $longestRun) {
                     $longestRun = $currentRun;

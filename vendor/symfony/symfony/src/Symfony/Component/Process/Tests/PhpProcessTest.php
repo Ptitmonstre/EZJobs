@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\Process\Tests;
 
+<<<<<<< HEAD
 use Symfony\Component\Process\PhpExecutableFinder;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Process\PhpProcess;
 
 class PhpProcessTest extends \PHPUnit_Framework_TestCase
@@ -27,6 +30,7 @@ PHP
         $process->wait();
         $this->assertEquals($expected, $process->getOutput());
     }
+<<<<<<< HEAD
 
     public function testCommandLine()
     {
@@ -46,4 +50,6 @@ PHP
         $process->wait();
         $this->assertSame($commandLine, $process->getCommandLine(), '::getCommandLine() returns the command line of PHP after wait');
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

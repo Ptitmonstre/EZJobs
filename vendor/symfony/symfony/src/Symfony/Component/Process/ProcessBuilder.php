@@ -167,6 +167,11 @@ class ProcessBuilder
     /**
      * Sets the input of the process.
      *
+<<<<<<< HEAD
+=======
+     * Deprecation: As of Symfony 2.5, this method only accepts string values.
+     *
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param string|null $input The input as a string
      *
      * @return ProcessBuilder

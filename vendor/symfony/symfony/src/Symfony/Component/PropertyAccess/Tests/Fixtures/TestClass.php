@@ -25,7 +25,10 @@ class TestClass
     private $publicAccessorWithMoreRequiredParameters;
     private $publicIsAccessor;
     private $publicHasAccessor;
+<<<<<<< HEAD
     private $publicGetter;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
     public function __construct($value)
     {
@@ -38,7 +41,10 @@ class TestClass
         $this->publicAccessorWithMoreRequiredParameters = $value;
         $this->publicIsAccessor = $value;
         $this->publicHasAccessor = $value;
+<<<<<<< HEAD
         $this->publicGetter = $value;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function setPublicAccessor($value)
@@ -168,9 +174,12 @@ class TestClass
     {
         return 'foobar';
     }
+<<<<<<< HEAD
 
     public function getPublicGetter()
     {
         return $this->publicGetter;
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

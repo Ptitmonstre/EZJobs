@@ -20,7 +20,11 @@ class RememberMeListenerTest extends \PHPUnit_Framework_TestCase
 {
     public function testOnCoreSecurityDoesNotTryToPopulateNonEmptySecurityContext()
     {
+<<<<<<< HEAD
         list($listener, $context) = $this->getListener();
+=======
+        list($listener, $context, , , ,) = $this->getListener();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $context
             ->expects($this->once())
@@ -38,7 +42,11 @@ class RememberMeListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testOnCoreSecurityDoesNothingWhenNoCookieIsSet()
     {
+<<<<<<< HEAD
         list($listener, $context, $service) = $this->getListener();
+=======
+        list($listener, $context, $service, ,) = $this->getListener();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $context
             ->expects($this->once())
@@ -64,7 +72,11 @@ class RememberMeListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testOnCoreSecurityIgnoresAuthenticationExceptionThrownByAuthenticationManagerImplementation()
     {
+<<<<<<< HEAD
         list($listener, $context, $service, $manager) = $this->getListener();
+=======
+        list($listener, $context, $service, $manager,) = $this->getListener();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $context
             ->expects($this->once())
@@ -144,7 +156,11 @@ class RememberMeListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testOnCoreSecurity()
     {
+<<<<<<< HEAD
         list($listener, $context, $service, $manager) = $this->getListener();
+=======
+        list($listener, $context, $service, $manager,) = $this->getListener();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $context
             ->expects($this->once())

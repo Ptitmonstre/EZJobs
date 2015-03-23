@@ -472,7 +472,11 @@ class ArrayNodeDefinition extends NodeDefinition implements ParentNodeDefinition
                 );
             }
 
+<<<<<<< HEAD
             if (null !== $this->key && (null === $this->addDefaultChildren || is_int($this->addDefaultChildren) && $this->addDefaultChildren > 0)) {
+=======
+            if (null !== $this->key && (null === $this->addDefaultChildren || is_integer($this->addDefaultChildren) && $this->addDefaultChildren > 0)) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 throw new InvalidDefinitionException(
                     sprintf('->addDefaultChildrenIfNoneSet() should set default children names as ->useAttributeAsKey() is used at path "%s"', $path)
                 );

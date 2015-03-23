@@ -36,6 +36,7 @@ class TwigExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('twig.xml');
 
+<<<<<<< HEAD
         foreach ($configs as $key => $config) {
             if (isset($config['globals'])) {
                 foreach ($config['globals'] as $name => $value) {
@@ -43,6 +44,15 @@ class TwigExtension extends Extension
                         $configs[$key]['globals'][$name] = array(
                             'key' => $name,
                             'value' => $value,
+=======
+        foreach ($configs as &$config) {
+            if (isset($config['globals'])) {
+                foreach ($config['globals'] as $name => $value) {
+                    if (is_array($value) && isset($value['key'])) {
+                        $config['globals'][$name] = array(
+                            'key' => $name,
+                            'value' => $config['globals'][$name],
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                         );
                     }
                 }

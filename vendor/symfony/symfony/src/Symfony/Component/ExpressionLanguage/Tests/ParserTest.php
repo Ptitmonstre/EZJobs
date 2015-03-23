@@ -161,6 +161,7 @@ class ParserTest extends \PHPUnit_Framework_TestCase
     {
         return new Node\GetAttrNode($node, new Node\ConstantNode($item), new Node\ArgumentsNode(), $type);
     }
+<<<<<<< HEAD
 
     /**
      * @dataProvider getInvalidPostfixData
@@ -194,4 +195,6 @@ class ParserTest extends \PHPUnit_Framework_TestCase
             ),
         );
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

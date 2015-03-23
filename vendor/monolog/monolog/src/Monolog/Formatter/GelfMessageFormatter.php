@@ -67,15 +67,19 @@ class GelfMessageFormatter extends NormalizerFormatter
     public function format(array $record)
     {
         $record = parent::format($record);
+<<<<<<< HEAD
 
         if (!isset($record['datetime'], $record['message'], $record['level'])) {
             throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, '.var_export($record, true).' given');
         }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $message = new Message();
         $message
             ->setTimestamp($record['datetime'])
             ->setShortMessage((string) $record['message'])
+<<<<<<< HEAD
             ->setHost($this->systemName)
             ->setLevel($this->logLevels[$record['level']]);
 
@@ -90,6 +94,17 @@ class GelfMessageFormatter extends NormalizerFormatter
             $message->setFile($record['extra']['file']);
             unset($record['extra']['file']);
         }
+=======
+            ->setFacility($record['channel'])
+            ->setHost($this->systemName)
+            ->setLine(isset($record['extra']['line']) ? $record['extra']['line'] : null)
+            ->setFile(isset($record['extra']['file']) ? $record['extra']['file'] : null)
+            ->setLevel($this->logLevels[$record['level']]);
+
+        // Do not duplicate these values in the additional fields
+        unset($record['extra']['line']);
+        unset($record['extra']['file']);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         foreach ($record['extra'] as $key => $val) {
             $message->setAdditional($this->extraPrefix . $key, is_scalar($val) ? $val : $this->toJson($val));

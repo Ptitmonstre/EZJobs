@@ -173,8 +173,12 @@ class AclProvider implements AclProviderInterface
             }
 
             // Is it time to load the current batch?
+<<<<<<< HEAD
             $currentBatchesCount = count($currentBatch);
             if ($currentBatchesCount > 0 && (self::MAX_BATCH_SIZE === $currentBatchesCount || ($i + 1) === $c)) {
+=======
+            if ((self::MAX_BATCH_SIZE === count($currentBatch) || ($i + 1) === $c) && count($currentBatch) > 0) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 try {
                     $loadedBatch = $this->lookupObjectIdentities($currentBatch, $sids, $oidLookup);
                 } catch (AclNotFoundException $aclNotFoundException) {
@@ -560,11 +564,18 @@ QUERY;
                 // attach ACL to the result set; even though we do not enforce that every
                 // object identity has only one instance, we must make sure to maintain
                 // referential equality with the oids passed to findAcls()
+<<<<<<< HEAD
                 $oidCacheKey = $objectIdentifier.$classType;
                 if (!isset($oidCache[$oidCacheKey])) {
                     $oidCache[$oidCacheKey] = $acl->getObjectIdentity();
                 }
                 $result->attach($oidCache[$oidCacheKey], $acl);
+=======
+                if (!isset($oidCache[$objectIdentifier.$classType])) {
+                    $oidCache[$objectIdentifier.$classType] = $acl->getObjectIdentity();
+                }
+                $result->attach($oidCache[$objectIdentifier.$classType], $acl);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             // so, this hasn't been hydrated yet
             } else {
                 // create object identity if we haven't done so yet
@@ -672,7 +683,11 @@ QUERY;
             // let's see if we have already hydrated this
             if (isset($acls[$parentId])) {
                 $aclParentAclProperty->setValue($acl, $acls[$parentId]);
+<<<<<<< HEAD
                 ++$processed;
+=======
+                $processed += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
                 continue;
             }

@@ -7,6 +7,7 @@ in 2.5 minor versions.
 To get the diff for a specific change, go to https://github.com/symfony/symfony/commit/XXX where XXX is the change hash
 To get the diff between two versions, go to https://github.com/symfony/symfony/compare/v2.5.0...v2.5.1
 
+<<<<<<< HEAD
 * 2.5.10 (2015-02-02)
 
  * bug #13528 [Validator] reject ill-formed strings (nicolas-grekas)
@@ -36,6 +37,8 @@ To get the diff between two versions, go to https://github.com/symfony/symfony/c
  * bug #13316 [Form] fixed the CSRF extension to allow using only the new interfaces (fabpot)
  * bug #13305 [FrameworkBundle] fixed missing information in some descriptors (fabpot)
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 * 2.5.9 (2015-01-07)
 
  * bug #13286 [Security] Don't destroy the session on buggy php releases. (derrabus)

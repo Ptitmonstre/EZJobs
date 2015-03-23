@@ -91,7 +91,11 @@ class RequestDataCollector extends DataCollector implements EventSubscriberInter
         $this->data = array(
             'format' => $request->getRequestFormat(),
             'content' => $content,
+<<<<<<< HEAD
             'content_type' => $response->headers->get('Content-Type', 'text/html'),
+=======
+            'content_type' => $response->headers->get('Content-Type') ? $response->headers->get('Content-Type') : 'text/html',
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             'status_text' => isset(Response::$statusTexts[$statusCode]) ? Response::$statusTexts[$statusCode] : '',
             'status_code' => $statusCode,
             'request_query' => $request->query->all(),

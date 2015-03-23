@@ -199,7 +199,11 @@ class Swift_Mime_SimpleMessage extends Swift_Mime_MimePart implements Swift_Mime
      * If $name is passed and the first parameter is a string, this name will be
      * associated with the address.
      *
+<<<<<<< HEAD
      * @param string|array $addresses
+=======
+     * @param string $addresses
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param string $name      optional
      *
      * @return Swift_Mime_SimpleMessage

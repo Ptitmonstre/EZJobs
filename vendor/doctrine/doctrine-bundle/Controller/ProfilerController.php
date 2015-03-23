@@ -14,8 +14,11 @@
 
 namespace Doctrine\Bundle\DoctrineBundle\Controller;
 
+<<<<<<< HEAD
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\SQLServerPlatform;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -56,11 +59,16 @@ class ProfilerController extends ContainerAware
         /** @var $connection \Doctrine\DBAL\Connection */
         $connection = $this->container->get('doctrine')->getConnection($connectionName);
         try {
+<<<<<<< HEAD
             if ($connection->getDatabasePlatform() instanceof SQLServerPlatform) {
                 $results = $this->explainSQLServerPlatform($connection, $query);
             } else {
                 $results = $this->explainOtherPlatform($connection, $query);
             }
+=======
+            $results = $connection->executeQuery('EXPLAIN '.$query['sql'], $query['params'], $query['types'])
+                ->fetchAll(\PDO::FETCH_ASSOC);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         } catch (\Exception $e) {
             return new Response('This query cannot be explained.');
         }
@@ -70,6 +78,7 @@ class ProfilerController extends ContainerAware
             'query' => $query,
         ));
     }
+<<<<<<< HEAD
 
     private function explainSQLServerPlatform(Connection $connection, $query)
     {
@@ -88,4 +97,6 @@ class ProfilerController extends ContainerAware
         return $connection->executeQuery('EXPLAIN '.$query['sql'], $query['params'], $query['types'])
             ->fetchAll(\PDO::FETCH_ASSOC);
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

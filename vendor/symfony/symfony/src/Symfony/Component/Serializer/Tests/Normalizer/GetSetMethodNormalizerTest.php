@@ -260,7 +260,11 @@ class GetSetMethodNormalizerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+<<<<<<< HEAD
      * @expectedException \Symfony\Component\Serializer\Exception\LogicException
+=======
+     * @expectedException \LogicException
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @expectedExceptionMessage Cannot normalize attribute "object" because injected serializer is not a normalizer
      */
     public function testUnableToNormalizeObjectAttribute()

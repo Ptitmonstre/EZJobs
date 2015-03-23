@@ -47,7 +47,10 @@ class ProjectServiceContainer extends Container
             'foo_bar' => 'getFooBarService',
             'foo_with_inline' => 'getFooWithInlineService',
             'method_call1' => 'getMethodCall1Service',
+<<<<<<< HEAD
             'new_factory' => 'getNewFactoryService',
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             'new_factory_service' => 'getNewFactoryServiceService',
             'request' => 'getRequestService',
             'service_from_static_method' => 'getServiceFromStaticMethodService',
@@ -283,7 +286,14 @@ class ProjectServiceContainer extends Container
      */
     protected function getNewFactoryServiceService()
     {
+<<<<<<< HEAD
         $this->services['new_factory_service'] = $instance = $this->get('new_factory')->getInstance();
+=======
+        $a = new \FactoryClass();
+        $a->foo = 'bar';
+
+        $this->services['new_factory_service'] = $instance = $a->getInstance();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $instance->foo = 'bar';
 
@@ -327,6 +337,7 @@ class ProjectServiceContainer extends Container
     }
 
     /**
+<<<<<<< HEAD
      * Gets the 'new_factory' service.
      *
      * This service is shared.
@@ -348,6 +359,8 @@ class ProjectServiceContainer extends Container
     }
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * {@inheritdoc}
      */
     public function getParameter($name)

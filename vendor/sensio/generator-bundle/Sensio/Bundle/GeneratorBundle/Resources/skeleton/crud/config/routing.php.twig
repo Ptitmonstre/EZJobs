@@ -30,11 +30,15 @@ $collection->add('{{ route_name_prefix }}_new', new Route('/new', array(
 $collection->add('{{ route_name_prefix }}_create', new Route(
     '/create',
     array('_controller' => '{{ bundle }}:{{ entity }}:create'),
+<<<<<<< HEAD
     array(),
     array(),
     '',
     array(),
     'POST'
+=======
+    array('_method' => 'post')
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 ));
 {% endif %}
 
@@ -46,11 +50,15 @@ $collection->add('{{ route_name_prefix }}_edit', new Route('/{id}/edit', array(
 $collection->add('{{ route_name_prefix }}_update', new Route(
     '/{id}/update',
     array('_controller' => '{{ bundle }}:{{ entity }}:update'),
+<<<<<<< HEAD
     array(),
     array(),
     '',
     array(),
     array('POST', 'PUT')
+=======
+    array('_method' => 'post|put')
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 ));
 {% endif %}
 
@@ -58,11 +66,15 @@ $collection->add('{{ route_name_prefix }}_update', new Route(
 $collection->add('{{ route_name_prefix }}_delete', new Route(
     '/{id}/delete',
     array('_controller' => '{{ bundle }}:{{ entity }}:delete'),
+<<<<<<< HEAD
     array(),
     array(),
     '',
     array(),
     array('POST', 'DELETE')
+=======
+    array('_method' => 'post|delete')
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 ));
 {% endif %}
 {% endblock body %}

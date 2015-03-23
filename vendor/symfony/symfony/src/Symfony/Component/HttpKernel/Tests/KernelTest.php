@@ -312,9 +312,12 @@ EOF;
         $this->assertEquals($expected, $output);
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyIsClassInActiveBundleFalse()
     {
         $kernel = $this->getKernelMockForIsClassInActiveBundleTest();
@@ -322,9 +325,12 @@ EOF;
         $this->assertFalse($kernel->isClassInActiveBundle('Not\In\Active\Bundle'));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyIsClassInActiveBundleFalseNoNamespace()
     {
         $kernel = $this->getKernelMockForIsClassInActiveBundleTest();
@@ -332,9 +338,12 @@ EOF;
         $this->assertFalse($kernel->isClassInActiveBundle('NotNamespacedClass'));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyIsClassInActiveBundleTrue()
     {
         $kernel = $this->getKernelMockForIsClassInActiveBundleTest();

@@ -10,8 +10,11 @@
             <argument type="service" id="sensio_framework_extra.security.expression_language" on-invalid="null" />
             <argument type="service" id="security.authentication.trust_resolver" on-invalid="null" />
             <argument type="service" id="security.role_hierarchy" on-invalid="null" />
+<<<<<<< HEAD
             <argument type="service" id="security.token_storage" on-invalid="null" />
             <argument type="service" id="security.authorization_checker" on-invalid="null" />
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             <tag name="kernel.event_subscriber" />
         </service>
 

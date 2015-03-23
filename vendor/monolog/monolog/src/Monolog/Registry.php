@@ -64,6 +64,7 @@ class Registry
     }
 
     /**
+<<<<<<< HEAD
      * Checks if such logging channel exists by name or instance
      *
      * @param string|Logger $logger Name or logger instance
@@ -80,6 +81,8 @@ class Registry
     }
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * Removes instance from registry by name or instance
      *
      * @param string|Logger $logger Name or logger instance

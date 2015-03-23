@@ -19,7 +19,10 @@ use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Constraints\Range;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\True;
+<<<<<<< HEAD
 use Symfony\Component\Validator\Exception\MappingException;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Mapping\Loader\XmlFileLoader;
 use Symfony\Component\Validator\Tests\Fixtures\ConstraintA;
@@ -106,6 +109,7 @@ class XmlFileLoaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $metadata);
     }
 
+<<<<<<< HEAD
     public function testThrowExceptionIfDocTypeIsSet()
     {
         $loader = new XmlFileLoader(__DIR__.'/withdoctype.xml');
@@ -119,15 +123,26 @@ class XmlFileLoaderTest extends \PHPUnit_Framework_TestCase
      * @see https://github.com/symfony/symfony/pull/12158
      */
     public function testDoNotModifyStateIfExceptionIsThrown()
+=======
+    /**
+     * @expectedException        \Symfony\Component\Validator\Exception\MappingException
+     * @expectedExceptionMessage Document types are not allowed.
+     */
+    public function testDocTypeIsNotAllowed()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $loader = new XmlFileLoader(__DIR__.'/withdoctype.xml');
         $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
 
+<<<<<<< HEAD
         try {
             $loader->loadClassMetadata($metadata);
         } catch (MappingException $e) {
             $this->setExpectedException('\Symfony\Component\Validator\Exception\MappingException');
             $loader->loadClassMetadata($metadata);
         }
+=======
+        $loader->loadClassMetadata($metadata);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 }

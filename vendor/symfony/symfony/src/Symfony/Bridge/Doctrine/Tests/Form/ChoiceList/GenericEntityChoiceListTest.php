@@ -267,9 +267,12 @@ class GenericEntityChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(1, 2), $choiceList->getValuesForChoices(array($item1, $item2)));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyInitShorthandEntityName()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

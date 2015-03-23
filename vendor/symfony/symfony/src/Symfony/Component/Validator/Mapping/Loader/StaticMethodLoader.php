@@ -14,6 +14,7 @@ namespace Symfony\Component\Validator\Mapping\Loader;
 use Symfony\Component\Validator\Exception\MappingException;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
+<<<<<<< HEAD
 /**
  * Loads validation metadata by calling a static method on the loaded class.
  *
@@ -33,6 +34,12 @@ class StaticMethodLoader implements LoaderInterface
      *
      * @param string $methodName The name of the static method to call
      */
+=======
+class StaticMethodLoader implements LoaderInterface
+{
+    protected $methodName;
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function __construct($methodName = 'loadValidatorMetadata')
     {
         $this->methodName = $methodName;

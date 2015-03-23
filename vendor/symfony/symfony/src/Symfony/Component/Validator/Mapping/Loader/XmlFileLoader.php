@@ -15,6 +15,7 @@ use Symfony\Component\Config\Util\XmlUtils;
 use Symfony\Component\Validator\Exception\MappingException;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
+<<<<<<< HEAD
 /**
  * Loads validation metadata from an XML file.
  *
@@ -24,6 +25,12 @@ class XmlFileLoader extends FileLoader
 {
     /**
      * The XML nodes of the mapping file.
+=======
+class XmlFileLoader extends FileLoader
+{
+    /**
+     * An array of SimpleXMLElement instances.
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *
      * @var \SimpleXMLElement[]|null
      */
@@ -35,11 +42,16 @@ class XmlFileLoader extends FileLoader
     public function loadClassMetadata(ClassMetadata $metadata)
     {
         if (null === $this->classes) {
+<<<<<<< HEAD
             // This method may throw an exception. Do not modify the class'
             // state before it completes
             $xml = $this->parseFile($this->file);
 
             $this->classes = array();
+=======
+            $this->classes = array();
+            $xml = $this->parseFile($this->file);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
             foreach ($xml->namespace as $namespace) {
                 $this->addNamespaceAlias((string) $namespace['prefix'], trim((string) $namespace));
@@ -51,9 +63,39 @@ class XmlFileLoader extends FileLoader
         }
 
         if (isset($this->classes[$metadata->getClassName()])) {
+<<<<<<< HEAD
             $classDescription = $this->classes[$metadata->getClassName()];
 
             $this->loadClassMetadataFromXml($metadata, $classDescription);
+=======
+            $xml = $this->classes[$metadata->getClassName()];
+
+            foreach ($xml->{'group-sequence-provider'} as $provider) {
+                $metadata->setGroupSequenceProvider(true);
+            }
+
+            foreach ($xml->{'group-sequence'} as $groupSequence) {
+                if (count($groupSequence->value) > 0) {
+                    $metadata->setGroupSequence($this->parseValues($groupSequence[0]->value));
+                }
+            }
+
+            foreach ($this->parseConstraints($xml->constraint) as $constraint) {
+                $metadata->addConstraint($constraint);
+            }
+
+            foreach ($xml->property as $property) {
+                foreach ($this->parseConstraints($property->constraint) as $constraint) {
+                    $metadata->addPropertyConstraint((string) $property['name'], $constraint);
+                }
+            }
+
+            foreach ($xml->getter as $getter) {
+                foreach ($this->parseConstraints($getter->constraint) as $constraint) {
+                    $metadata->addGetterConstraint((string) $getter['property'], $constraint);
+                }
+            }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
             return true;
         }
@@ -163,6 +205,7 @@ class XmlFileLoader extends FileLoader
     }
 
     /**
+<<<<<<< HEAD
      * Loads the XML class descriptions from the given file.
      *
      * @param string $path The path of the XML file
@@ -175,12 +218,27 @@ class XmlFileLoader extends FileLoader
     {
         try {
             $dom = XmlUtils::loadFile($path, __DIR__.'/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd');
+=======
+     * Parse a XML File.
+     *
+     * @param string $file Path of file
+     *
+     * @return \SimpleXMLElement
+     *
+     * @throws MappingException
+     */
+    protected function parseFile($file)
+    {
+        try {
+            $dom = XmlUtils::loadFile($file, __DIR__.'/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         } catch (\Exception $e) {
             throw new MappingException($e->getMessage(), $e->getCode(), $e);
         }
 
         return simplexml_import_dom($dom);
     }
+<<<<<<< HEAD
 
     /**
      * Loads the validation metadata from the given XML class description.
@@ -216,4 +274,6 @@ class XmlFileLoader extends FileLoader
             }
         }
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

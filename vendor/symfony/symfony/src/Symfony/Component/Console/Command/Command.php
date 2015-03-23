@@ -173,10 +173,13 @@ class Command
     /**
      * Interacts with the user.
      *
+<<<<<<< HEAD
      * This method is executed before the InputDefinition is validated.
      * This means that this is the only place where the command can
      * interactively ask for values of missing required arguments.
      *
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param InputInterface  $input  An InputInterface instance
      * @param OutputInterface $output An OutputInterface instance
      */

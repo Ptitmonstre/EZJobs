@@ -76,7 +76,11 @@ class ControllerResolver extends BaseControllerResolver
             throw new \InvalidArgumentException(sprintf('Class "%s" does not exist.', $class));
         }
 
+<<<<<<< HEAD
         $controller = $this->instantiateController($class);
+=======
+        $controller = new $class();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         if ($controller instanceof ContainerAwareInterface) {
             $controller->setContainer($this->container);
         }

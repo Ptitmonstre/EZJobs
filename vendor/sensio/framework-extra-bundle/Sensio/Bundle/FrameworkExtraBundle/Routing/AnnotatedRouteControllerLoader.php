@@ -27,7 +27,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class AnnotatedRouteControllerLoader extends AnnotationClassLoader
 {
     /**
+<<<<<<< HEAD
      * Configures the _controller default parameter and eventually the HTTP method
+=======
+     * Configures the _controller default parameter and eventually the _method
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * requirement of a given Route instance.
      *
      * @param Route             $route  A route instance
@@ -50,7 +54,11 @@ class AnnotatedRouteControllerLoader extends AnnotationClassLoader
         // requirements (@Method)
         foreach ($this->reader->getMethodAnnotations($method) as $configuration) {
             if ($configuration instanceof Method) {
+<<<<<<< HEAD
                 $route->setMethods(implode('|', $configuration->getMethods()));
+=======
+                $route->setRequirement('_method', implode('|', $configuration->getMethods()));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             } elseif ($configuration instanceof FrameworkExtraBundleRoute && $configuration->getService()) {
                 throw new \LogicException('The service option can only be specified at class level.');
             }
@@ -73,8 +81,13 @@ class AnnotatedRouteControllerLoader extends AnnotationClassLoader
     /**
      * Makes the default route name more sane by removing common keywords.
      *
+<<<<<<< HEAD
      * @param \ReflectionClass  $class  A ReflectionClass instance
      * @param \ReflectionMethod $method A ReflectionMethod instance
+=======
+     * @param  \ReflectionClass  $class  A ReflectionClass instance
+     * @param  \ReflectionMethod $method A ReflectionMethod instance
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *
      * @return string The default route name
      */
@@ -85,11 +98,19 @@ class AnnotatedRouteControllerLoader extends AnnotationClassLoader
         return preg_replace(array(
             '/(bundle|controller)_/',
             '/action(_\d+)?$/',
+<<<<<<< HEAD
             '/__/',
         ), array(
             '_',
             '\\1',
             '_',
+=======
+            '/__/'
+        ), array(
+            '_',
+            '\\1',
+            '_'
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         ), $routeName);
     }
 }

@@ -59,7 +59,10 @@ class StringUtilTest extends \PHPUnit_Framework_TestCase
             array('data', array('daton', 'datum')),
             array('days', 'day'),
             array('discos', 'disco'),
+<<<<<<< HEAD
             array('devices', array('devex', 'devix', 'device')),
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             array('drives', 'drive'),
             array('drivers', 'driver'),
             array('dwarves', array('dwarf', 'dwarve', 'dwarff')),
@@ -68,7 +71,10 @@ class StringUtilTest extends \PHPUnit_Framework_TestCase
             array('emphases', array('emphas', 'emphase', 'emphasis')),
             array('faxes', 'fax'),
             array('feet', 'foot'),
+<<<<<<< HEAD
             array('feedback', 'feedback'),
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             array('foci', 'focus'),
             array('focuses', array('focus', 'focuse', 'focusis')),
             array('formulae', 'formula'),

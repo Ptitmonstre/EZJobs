@@ -195,13 +195,21 @@ class BinaryFileResponse extends Response
             $path = $this->file->getRealPath();
             if (strtolower($type) == 'x-accel-redirect') {
                 // Do X-Accel-Mapping substitutions.
+<<<<<<< HEAD
                 // @link http://wiki.nginx.org/X-accel#X-Accel-Redirect
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 foreach (explode(',', $request->headers->get('X-Accel-Mapping', '')) as $mapping) {
                     $mapping = explode('=', $mapping, 2);
 
                     if (2 == count($mapping)) {
+<<<<<<< HEAD
                         $pathPrefix = trim($mapping[0]);
                         $location = trim($mapping[1]);
+=======
+                        $location = trim($mapping[0]);
+                        $pathPrefix = trim($mapping[1]);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
                         if (substr($path, 0, strlen($pathPrefix)) == $pathPrefix) {
                             $path = $location.substr($path, strlen($pathPrefix));

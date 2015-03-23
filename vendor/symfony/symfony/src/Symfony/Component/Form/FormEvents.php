@@ -11,12 +11,15 @@
 namespace Symfony\Component\Form;
 
 /**
+<<<<<<< HEAD
  * To learn more about how form events work check the documentation
  * entry at {@link http://symfony.com/doc/any/components/form/form_events.html}.
  *
  * To learn how to dynamically modify forms using events check the cookbook
  * entry at {@link http://symfony.com/doc/any/cookbook/form/dynamic_form_modification.html}.
  *
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
 final class FormEvents

@@ -4,8 +4,13 @@ CHANGELOG
 2.6.2
 -----
 
+<<<<<<< HEAD
  * Added back the `model_timezone` and `view_timezone` options for `TimeType`, `DateType`
    and `BirthdayType`
+=======
+* Added back the `model_timezone` and `view_timezone` options for `TimeType`, `DateType`
+  and `BirthdayType`
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 2.6.0
 -----

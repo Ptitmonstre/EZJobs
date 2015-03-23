@@ -83,7 +83,11 @@ EOF
         $helper = new DescriptorHelper();
         $helper->describe($output, $this->command, array(
             'format' => $input->getOption('format'),
+<<<<<<< HEAD
             'raw_text' => $input->getOption('raw'),
+=======
+            'raw' => $input->getOption('raw'),
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         ));
 
         $this->command = null;

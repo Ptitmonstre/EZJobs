@@ -11,6 +11,13 @@
 
 namespace Sensio\Bundle\FrameworkExtraBundle\EventListener;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 /**
  * CacheListener handles HTTP cache headers.
  *

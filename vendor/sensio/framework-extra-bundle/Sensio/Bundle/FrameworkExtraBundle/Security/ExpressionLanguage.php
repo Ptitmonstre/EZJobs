@@ -25,9 +25,15 @@ class ExpressionLanguage extends BaseExpressionLanguage
         parent::registerFunctions();
 
         $this->register('is_granted', function ($attributes, $object = 'null') {
+<<<<<<< HEAD
             return sprintf('$auth_checker->isGranted(%s, %s)', $attributes, $object);
         }, function (array $variables, $attributes, $object = null) {
             return $variables['auth_checker']->isGranted($attributes, $object);
+=======
+            return sprintf('$security_context->isGranted(%s, %s)', $attributes, $object);
+        }, function (array $variables, $attributes, $object = null) {
+            return $variables['security_context']->isGranted($attributes, $object);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         });
     }
 }

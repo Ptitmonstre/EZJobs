@@ -14,6 +14,10 @@ namespace Sensio\Bundle\GeneratorBundle\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Console\Output\Output;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Console\Command\Command;
 use Sensio\Bundle\GeneratorBundle\Generator\DoctrineFormGenerator;
 

@@ -21,7 +21,11 @@ class AuthorizationCheckerTest extends \PHPUnit_Framework_TestCase
     private $authorizationChecker;
     private $tokenStorage;
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->authenticationManager = $this->getMock('Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface');
         $this->accessDecisionManager = $this->getMock('Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface');

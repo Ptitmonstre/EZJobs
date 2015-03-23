@@ -16,7 +16,11 @@ use Psr\Log\LoggerInterface;
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  */
+<<<<<<< HEAD
 class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
+=======
+class LoggingTranslator implements TranslatorInterface
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 {
     /**
      * @var TranslatorInterface
@@ -85,6 +89,7 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function getCatalogue($locale = null)
@@ -93,6 +98,8 @@ class LoggingTranslator implements TranslatorInterface, TranslatorBagInterface
     }
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * Passes through all unknown calls onto the translator object.
      */
     public function __call($method, $args)

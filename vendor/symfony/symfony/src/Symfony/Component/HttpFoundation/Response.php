@@ -1267,7 +1267,11 @@ class Response
     protected function ensureIEOverSSLCompatibility(Request $request)
     {
         if (false !== stripos($this->headers->get('Content-Disposition'), 'attachment') && preg_match('/MSIE (.*?);/i', $request->server->get('HTTP_USER_AGENT'), $match) == 1 && true === $request->isSecure()) {
+<<<<<<< HEAD
             if ((int) preg_replace("/(MSIE )(.*?);/", "$2", $match[0]) < 9) {
+=======
+            if (intval(preg_replace("/(MSIE )(.*?);/", "$2", $match[0])) < 9) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 $this->headers->remove('Cache-Control');
             }
         }

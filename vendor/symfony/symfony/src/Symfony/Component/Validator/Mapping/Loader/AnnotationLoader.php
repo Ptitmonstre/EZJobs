@@ -19,6 +19,7 @@ use Symfony\Component\Validator\Constraints\GroupSequenceProvider;
 use Symfony\Component\Validator\Exception\MappingException;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
+<<<<<<< HEAD
 /**
  * Loads validation metadata using a Doctrine annotation {@link Reader}.
  *
@@ -29,6 +30,10 @@ class AnnotationLoader implements LoaderInterface
     /**
      * @var Reader
      */
+=======
+class AnnotationLoader implements LoaderInterface
+{
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     protected $reader;
 
     public function __construct(Reader $reader)
@@ -43,7 +48,11 @@ class AnnotationLoader implements LoaderInterface
     {
         $reflClass = $metadata->getReflectionClass();
         $className = $reflClass->name;
+<<<<<<< HEAD
         $success = false;
+=======
+        $loaded = false;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         foreach ($this->reader->getClassAnnotations($reflClass) as $constraint) {
             if ($constraint instanceof GroupSequence) {
@@ -54,7 +63,11 @@ class AnnotationLoader implements LoaderInterface
                 $metadata->addConstraint($constraint);
             }
 
+<<<<<<< HEAD
             $success = true;
+=======
+            $loaded = true;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         foreach ($reflClass->getProperties() as $property) {
@@ -64,7 +77,11 @@ class AnnotationLoader implements LoaderInterface
                         $metadata->addPropertyConstraint($property->name, $constraint);
                     }
 
+<<<<<<< HEAD
                     $success = true;
+=======
+                    $loaded = true;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
             }
         }
@@ -85,11 +102,19 @@ class AnnotationLoader implements LoaderInterface
                         }
                     }
 
+<<<<<<< HEAD
                     $success = true;
+=======
+                    $loaded = true;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
             }
         }
 
+<<<<<<< HEAD
         return $success;
+=======
+        return $loaded;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 }

@@ -57,9 +57,12 @@ class LazyChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array(0 => new ChoiceView('a', 'a', 'A'), 2 => new ChoiceView('c', 'c', 'C')), $this->list->getRemainingViews());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForChoices()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -68,9 +71,12 @@ class LazyChoiceListTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(array(1, 2), $this->list->getIndicesForChoices($choices));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetIndicesForValues()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

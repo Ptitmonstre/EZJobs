@@ -16,7 +16,10 @@ use Symfony\Component\Validator\Validation;
 /**
  * @since  2.5.3
  * @author Bernhard Schussek <bschussek@gmail.com>
+<<<<<<< HEAD
  * @group  legacy
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
  */
 class LegacyDateTimeValidator2Dot4ApiTest extends DateTimeValidatorTest
 {

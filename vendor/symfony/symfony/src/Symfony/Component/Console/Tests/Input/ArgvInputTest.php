@@ -257,7 +257,11 @@ class ArgvInputTest extends \PHPUnit_Framework_TestCase
     public function testGetFirstArgument()
     {
         $input = new ArgvInput(array('cli.php', '-fbbar'));
+<<<<<<< HEAD
         $this->assertNull($input->getFirstArgument(), '->getFirstArgument() returns null when there is no arguments');
+=======
+        $this->assertEquals('', $input->getFirstArgument(), '->getFirstArgument() returns the first argument from the raw input');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $input = new ArgvInput(array('cli.php', '-fbbar', 'foo'));
         $this->assertEquals('foo', $input->getFirstArgument(), '->getFirstArgument() returns the first argument from the raw input');

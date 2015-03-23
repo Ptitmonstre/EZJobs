@@ -199,6 +199,7 @@ abstract class AbstractCloner implements ClonerInterface
         }
 
         if ($classInfo[1]) {
+<<<<<<< HEAD
             $p = $this->callCaster(function ($obj) {return $obj->__debugInfo();}, $obj, array(), null, $isNested);
         } else {
             $p = (array) $obj;
@@ -210,6 +211,17 @@ abstract class AbstractCloner implements ClonerInterface
                 $a["\0+\0".$k] = $p;
             } else {
                 $a[$k] = $p;
+=======
+            $a = $this->callCaster(function ($obj) {return $obj->__debugInfo();}, $obj, array(), null, $isNested);
+        } else {
+            $a = (array) $obj;
+        }
+
+        foreach ($a as $k => $p) {
+            if (!isset($k[0]) || ("\0" !== $k[0] && !$classInfo[2]->hasProperty($k))) {
+                unset($a[$k]);
+                $a["\0+\0".$k] = $p;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }
         }
 

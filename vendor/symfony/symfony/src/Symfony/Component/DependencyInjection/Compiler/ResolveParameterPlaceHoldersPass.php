@@ -37,6 +37,7 @@ class ResolveParameterPlaceHoldersPass implements CompilerPassInterface
                 $definition->setClass($parameterBag->resolveValue($definition->getClass()));
                 $definition->setFile($parameterBag->resolveValue($definition->getFile()));
                 $definition->setArguments($parameterBag->resolveValue($definition->getArguments()));
+<<<<<<< HEAD
                 $definition->setFactoryClass($parameterBag->resolveValue($definition->getFactoryClass()));
 
                 $factory = $definition->getFactory();
@@ -45,6 +46,8 @@ class ResolveParameterPlaceHoldersPass implements CompilerPassInterface
                     $factory[0] = $parameterBag->resolveValue($factory[0]);
                     $definition->setFactory($factory);
                 }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
                 $calls = array();
                 foreach ($definition->getMethodCalls() as $name => $arguments) {

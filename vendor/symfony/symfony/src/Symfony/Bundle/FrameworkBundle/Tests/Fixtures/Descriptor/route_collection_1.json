@@ -3,7 +3,11 @@
         "path": "\/hello\/{name}",
         "pathRegex": "#^\/hello(?:\/(?P<name>[a-z]+))?$#s",
         "host": "localhost",
+<<<<<<< HEAD
         "hostRegex": "#^localhost$#si",
+=======
+        "hostRegex": "#^localhost$#s",
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         "scheme": "http|https",
         "method": "GET|HEAD",
         "class": "Symfony\\Component\\Routing\\Route",
@@ -23,7 +27,11 @@
         "path": "\/name\/add",
         "pathRegex": "#^\/name\/add$#s",
         "host": "localhost",
+<<<<<<< HEAD
         "hostRegex": "#^localhost$#si",
+=======
+        "hostRegex": "#^localhost$#s",
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         "scheme": "http|https",
         "method": "PUT|POST",
         "class": "Symfony\\Component\\Routing\\Route",

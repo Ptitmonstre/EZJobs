@@ -92,7 +92,11 @@ class DoctrineParamConverter implements ParamConverterInterface
         try {
             return $this->getManager($options['entity_manager'], $class)->getRepository($class)->$method($id);
         } catch (NoResultException $e) {
+<<<<<<< HEAD
             return;
+=======
+            return null;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 
@@ -170,7 +174,11 @@ class DoctrineParamConverter implements ParamConverterInterface
         try {
             return $em->getRepository($class)->$method($criteria);
         } catch (NoResultException $e) {
+<<<<<<< HEAD
             return;
+=======
+            return null;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 

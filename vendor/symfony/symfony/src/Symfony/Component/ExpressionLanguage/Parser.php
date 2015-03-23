@@ -314,6 +314,7 @@ class Parser
                 if (
                     $token->type !== Token::NAME_TYPE
                     &&
+<<<<<<< HEAD
                     // Operators like "not" and "matches" are valid method or property names,
                     //
                     // In other words, besides NAME_TYPE, OPERATOR_TYPE could also be parsed as a property or method.
@@ -328,6 +329,14 @@ class Parser
                     ($token->type !== Token::OPERATOR_TYPE || !preg_match('/[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/A', $token->value))
                 ) {
                     throw new SyntaxError('Expected name', $token->cursor);
+=======
+                    $token->type !== Token::NUMBER_TYPE
+                    &&
+                    // operators line "not" are valid method or property names
+                    ($token->type !== Token::OPERATOR_TYPE && preg_match('/[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/A', $token->value))
+                ) {
+                    throw new SyntaxError('Expected name or number', $token->cursor);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
 
                 $arg = new Node\ConstantNode($token->value);

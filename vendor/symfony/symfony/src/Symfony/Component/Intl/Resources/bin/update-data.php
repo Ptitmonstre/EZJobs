@@ -50,7 +50,11 @@ the subdirectories bin/ and lib/.
 For running this script, the intl extension must be loaded and all vendors
 must have been installed through composer:
 
+<<<<<<< HEAD
 composer install
+=======
+composer install --dev
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 MESSAGE
     );

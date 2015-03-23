@@ -1169,7 +1169,11 @@ EOF;
                     $behavior[$id] = $argument->getInvalidBehavior();
                 }
 
+<<<<<<< HEAD
                 ++$calls[$id];
+=======
+                $calls[$id] += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }
         }
     }
@@ -1332,9 +1336,13 @@ EOF;
                 if (null !== $value->getFactoryClass()) {
                     return sprintf("call_user_func(array(%s, '%s')%s)", $this->dumpValue($value->getFactoryClass()), $value->getFactoryMethod(), count($arguments) > 0 ? ', '.implode(', ', $arguments) : '');
                 } elseif (null !== $value->getFactoryService()) {
+<<<<<<< HEAD
                     $service = $this->dumpValue($value->getFactoryService());
 
                     return sprintf("%s->%s(%s)", 0 === strpos($service, '$') ? sprintf('$this->get(%s)', $service) : $this->getServiceCall($value->getFactoryService()), $value->getFactoryMethod(), implode(', ', $arguments));
+=======
+                    return sprintf("%s->%s(%s)", $this->getServiceCall($value->getFactoryService()), $value->getFactoryMethod(), implode(', ', $arguments));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 } else {
                     throw new RuntimeException('Cannot dump definitions which have factory method without factory service or factory class.');
                 }
@@ -1476,6 +1484,7 @@ EOF;
 
             if ('' === $name) {
                 $name .= $firstChars[$i%$firstCharsLength];
+<<<<<<< HEAD
                 $i = (int) ($i/$firstCharsLength);
             }
 
@@ -1486,6 +1495,18 @@ EOF;
             }
 
             ++$this->variableCount;
+=======
+                $i = intval($i/$firstCharsLength);
+            }
+
+            while ($i > 0) {
+                $i -= 1;
+                $name .= $nonFirstChars[$i%$nonFirstCharsLength];
+                $i = intval($i/$nonFirstCharsLength);
+            }
+
+            $this->variableCount += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
             // check that the name is not reserved
             if (in_array($name, $this->reservedVariables, true)) {

@@ -171,6 +171,7 @@
                 requestCounter[0].className = className;
             };
 
+<<<<<<< HEAD
         var addEventListener;
 
         var el = document.createElement('div');
@@ -221,6 +222,43 @@
                     proxied.apply(this, Array.prototype.slice.call(arguments));
                 };
             }
+=======
+        {% if excluded_ajax_paths is defined %}
+            var proxied = XMLHttpRequest.prototype.open;
+
+            XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
+                var self = this;
+
+                /* prevent logging AJAX calls to static and inline files, like templates */
+                if (url.substr(0, 1) === '/' && !url.match(new RegExp("{{ excluded_ajax_paths }}"))) {
+                    var stackElement = {
+                        loading: true,
+                        error: false,
+                        url: url,
+                        method: method,
+                        start: new Date()
+                    };
+
+                    requestStack.push(stackElement);
+
+                    this.addEventListener("readystatechange", function() {
+                        if (self.readyState == 4) {
+                            stackElement.duration = new Date() - stackElement.start;
+                            stackElement.loading = false;
+                            stackElement.error = self.status < 200 || self.status >= 400;
+                            stackElement.profile = self.getResponseHeader("X-Debug-Token");
+                            stackElement.profilerUrl = self.getResponseHeader("X-Debug-Token-Link");
+
+                            Sfjs.renderAjaxRequests();
+                        }
+                    }, false);
+
+                    Sfjs.renderAjaxRequests();
+                }
+
+                proxied.apply(this, Array.prototype.slice.call(arguments));
+            };
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         {% endif %}
 
         return {
@@ -234,8 +272,11 @@
 
             setPreference: setPreference,
 
+<<<<<<< HEAD
             addEventListener: addEventListener,
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             request: request,
 
             renderAjaxRequests: renderAjaxRequests,

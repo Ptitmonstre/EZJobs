@@ -307,8 +307,13 @@ class Table
         $width = $this->getColumnWidth($column);
 
         // str_pad won't work properly with multi-byte strings, we need to fix the padding
+<<<<<<< HEAD
         if (function_exists('mb_strwidth') && false !== $encoding = mb_detect_encoding($cell)) {
             $width += strlen($cell) - mb_strwidth($cell, $encoding);
+=======
+        if (function_exists('mb_strlen') && false !== $encoding = mb_detect_encoding($cell)) {
+            $width += strlen($cell) - mb_strlen($cell, $encoding);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         $width += Helper::strlen($cell) - Helper::strlenWithoutDecoration($this->output->getFormatter(), $cell);

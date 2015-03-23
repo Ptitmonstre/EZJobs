@@ -10,10 +10,15 @@
             "email": "fabien@symfony.com"
         }
     ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "~2.3",
         "symfony/class-loader": "~2.2",
+<<<<<<< HEAD
         "symfony/process": "~2.2",
         "sensiolabs/security-checker": "~2.0"
     },
@@ -26,6 +31,13 @@
         "symfony/form": "If you want to use the configurator",
         "symfony/validator": "If you want to use the configurator",
         "symfony/yaml": "If you want to use  the configurator"
+=======
+        "symfony/form": "~2.2",
+        "symfony/process": "~2.2",
+        "symfony/validator": "~2.2",
+        "symfony/yaml": "~2.2",
+        "sensiolabs/security-checker": "~2.0"
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     },
     "autoload": {
         "psr-0": { "Sensio\\Bundle\\DistributionBundle": "" }

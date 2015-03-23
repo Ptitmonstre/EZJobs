@@ -130,7 +130,11 @@ class File extends \SplFileInfo
     protected function getTargetFile($directory, $name = null)
     {
         if (!is_dir($directory)) {
+<<<<<<< HEAD
             if (false === @mkdir($directory, 0777, true) && !is_dir($directory)) {
+=======
+            if (false === @mkdir($directory, 0777, true)) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 throw new FileException(sprintf('Unable to create the "%s" directory', $directory));
             }
         } elseif (!is_writable($directory)) {

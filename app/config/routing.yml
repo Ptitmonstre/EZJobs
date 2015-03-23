@@ -1,3 +1,7 @@
 app:
+<<<<<<< HEAD
     resource: "@AppBundle/Controller/"
+=======
+    resource: @AppBundle/Controller/
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     type:     annotation

@@ -129,7 +129,11 @@ class Inline
                     setlocale(LC_NUMERIC, 'C');
                 }
                 if (is_float($value)) {
+<<<<<<< HEAD
                     $repr = (string) $value;
+=======
+                    $repr = strval($value);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     if (is_infinite($value)) {
                         $repr = str_ireplace('INF', '.Inf', $repr);
                     } elseif (floor($value) == $value && $repr == $value) {
@@ -137,7 +141,11 @@ class Inline
                         $repr = '!!float '.$repr;
                     }
                 } else {
+<<<<<<< HEAD
                     $repr = is_string($value) ? "'$value'" : (string) $value;
+=======
+                    $repr = is_string($value) ? "'$value'" : strval($value);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
                 if (false !== $locale) {
                     setlocale(LC_NUMERIC, $locale);
@@ -169,9 +177,14 @@ class Inline
     {
         // array
         $keys = array_keys($value);
+<<<<<<< HEAD
         $keysCount = count($keys);
         if ((1 === $keysCount && '0' == $keys[0])
             || ($keysCount > 1 && array_reduce($keys, function ($v, $w) { return (int) $v + $w; }, 0) === $keysCount * ($keysCount - 1) / 2)
+=======
+        if ((1 == count($keys) && '0' == $keys[0])
+            || (count($keys) > 1 && array_reduce($keys, function ($v, $w) { return (int) $v + $w; }, 0) == count($keys) * (count($keys) - 1) / 2)
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         ) {
             $output = array();
             foreach ($value as $val) {
@@ -286,7 +299,11 @@ class Inline
     {
         $output = array();
         $len = strlen($sequence);
+<<<<<<< HEAD
         ++$i;
+=======
+        $i += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         // [foo, bar, ...]
         while ($i < $len) {
@@ -345,7 +362,11 @@ class Inline
     {
         $output = array();
         $len = strlen($mapping);
+<<<<<<< HEAD
         ++$i;
+=======
+        $i += 1;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         // {foo: bar, bar:foo, ...}
         while ($i < $len) {
@@ -467,7 +488,11 @@ class Inline
                     case 0 === strpos($scalar, '!str'):
                         return (string) substr($scalar, 5);
                     case 0 === strpos($scalar, '! '):
+<<<<<<< HEAD
                         return (int) self::parseScalar(substr($scalar, 2));
+=======
+                        return intval(self::parseScalar(substr($scalar, 2)));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     case 0 === strpos($scalar, '!!php/object:'):
                         if (self::$objectSupport) {
                             return unserialize(substr($scalar, 13));
@@ -482,23 +507,39 @@ class Inline
                         return (float) substr($scalar, 8);
                     case ctype_digit($scalar):
                         $raw = $scalar;
+<<<<<<< HEAD
                         $cast = (int) $scalar;
+=======
+                        $cast = intval($scalar);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
                         return '0' == $scalar[0] ? octdec($scalar) : (((string) $raw == (string) $cast) ? $cast : $raw);
                     case '-' === $scalar[0] && ctype_digit(substr($scalar, 1)):
                         $raw = $scalar;
+<<<<<<< HEAD
                         $cast = (int) $scalar;
 
                         return '0' == $scalar[1] ? octdec($scalar) : (((string) $raw === (string) $cast) ? $cast : $raw);
                     case is_numeric($scalar):
                         return '0x' === $scalar[0].$scalar[1] ? hexdec($scalar) : (float) $scalar;
+=======
+                        $cast = intval($scalar);
+
+                        return '0' == $scalar[1] ? octdec($scalar) : (((string) $raw == (string) $cast) ? $cast : $raw);
+                    case is_numeric($scalar):
+                        return '0x' == $scalar[0].$scalar[1] ? hexdec($scalar) : floatval($scalar);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     case '.inf' === $scalarLower:
                     case '.nan' === $scalarLower:
                         return -log(0);
                     case '-.inf' === $scalarLower:
                         return log(0);
                     case preg_match('/^(-|\+)?[0-9,]+(\.[0-9]+)?$/', $scalar):
+<<<<<<< HEAD
                         return (float) str_replace(',', '', $scalar);
+=======
+                        return floatval(str_replace(',', '', $scalar));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     case preg_match(self::getTimestampRegex(), $scalar):
                         return strtotime($scalar);
                 }

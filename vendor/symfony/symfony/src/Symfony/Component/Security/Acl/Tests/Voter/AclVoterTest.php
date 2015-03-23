@@ -27,7 +27,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupportsAttribute($attribute, $supported)
     {
+<<<<<<< HEAD
         list($voter, , $permissionMap) = $this->getVoter(true, false);
+=======
+        list($voter, , $permissionMap, ,) = $this->getVoter(true, false);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $permissionMap
             ->expects($this->once())
@@ -44,7 +48,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupportsAttributeNonString($attribute)
     {
+<<<<<<< HEAD
         list($voter) = $this->getVoter(true, false);
+=======
+        list($voter, , , , ,) = $this->getVoter(true, false);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $this->assertFalse($voter->supportsAttribute($attribute));
     }
@@ -72,7 +80,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupportsClass($class)
     {
+<<<<<<< HEAD
         list($voter) = $this->getVoter();
+=======
+        list($voter, , , ,) = $this->getVoter();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         $this->assertTrue($voter->supportsClass($class));
     }
@@ -88,7 +100,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
 
     public function testVote()
     {
+<<<<<<< HEAD
         list($voter, , $permissionMap) = $this->getVoter();
+=======
+        list($voter, , $permissionMap, ,) = $this->getVoter();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $permissionMap
             ->expects($this->atLeastOnce())
             ->method('getMasks')
@@ -103,7 +119,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
      */
     public function testVoteWhenNoObjectIsPassed($allowIfObjectIdentityUnavailable)
     {
+<<<<<<< HEAD
         list($voter, , $permissionMap) = $this->getVoter($allowIfObjectIdentityUnavailable);
+=======
+        list($voter, , $permissionMap, ,) = $this->getVoter($allowIfObjectIdentityUnavailable);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $permissionMap
             ->expects($this->once())
             ->method('getMasks')
@@ -124,7 +144,11 @@ class AclVoterTest extends \PHPUnit_Framework_TestCase
      */
     public function testVoteWhenOidStrategyReturnsNull($allowIfUnavailable)
     {
+<<<<<<< HEAD
         list($voter, , $permissionMap, $oidStrategy) = $this->getVoter($allowIfUnavailable);
+=======
+        list($voter, , $permissionMap, $oidStrategy,) = $this->getVoter($allowIfUnavailable);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $permissionMap
             ->expects($this->once())
             ->method('getMasks')

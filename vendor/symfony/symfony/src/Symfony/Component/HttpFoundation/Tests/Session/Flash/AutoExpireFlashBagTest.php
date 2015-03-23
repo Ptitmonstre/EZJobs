@@ -38,7 +38,11 @@ class AutoExpireFlashBagTest extends \PHPUnit_Framework_TestCase
         $this->bag->initialize($this->array);
     }
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->bag = null;
         parent::tearDown();

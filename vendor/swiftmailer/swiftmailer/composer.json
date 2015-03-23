@@ -25,7 +25,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "5.4-dev"
+=======
+            "dev-master": "5.3-dev"
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
     }
 }

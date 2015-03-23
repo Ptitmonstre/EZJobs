@@ -29,6 +29,7 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
         $this->propertyAccessor = new PropertyAccessor();
     }
 
+<<<<<<< HEAD
     public function getPathsWithUnexpectedType()
     {
         return array(
@@ -43,6 +44,8 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function getPathsWithMissingProperty()
     {
         return array(
@@ -152,6 +155,7 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+<<<<<<< HEAD
      * @dataProvider getPathsWithUnexpectedType
      * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
      * @expectedExceptionMessage Expected argument of type "object or array"
@@ -159,6 +163,29 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
     public function testGetValueThrowsExceptionIfNotObjectOrArray($objectOrArray, $path)
     {
         $this->propertyAccessor->getValue($objectOrArray, $path);
+=======
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testGetValueThrowsExceptionIfNotObjectOrArray()
+    {
+        $this->propertyAccessor->getValue('baz', 'foobar');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testGetValueThrowsExceptionIfNull()
+    {
+        $this->propertyAccessor->getValue(null, 'foobar');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testGetValueThrowsExceptionIfEmpty()
+    {
+        $this->propertyAccessor->getValue('', 'foobar');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**
@@ -248,6 +275,7 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+<<<<<<< HEAD
      * @dataProvider getPathsWithUnexpectedType
      * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
      * @expectedExceptionMessage Expected argument of type "object or array"
@@ -255,6 +283,35 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
     public function testSetValueThrowsExceptionIfNotObjectOrArray($objectOrArray, $path)
     {
         $this->propertyAccessor->setValue($objectOrArray, $path, 'value');
+=======
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testSetValueThrowsExceptionIfNotObjectOrArray()
+    {
+        $value = 'baz';
+
+        $this->propertyAccessor->setValue($value, 'foobar', 'bam');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testSetValueThrowsExceptionIfNull()
+    {
+        $value = null;
+
+        $this->propertyAccessor->setValue($value, 'foobar', 'bam');
+    }
+
+    /**
+     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     */
+    public function testSetValueThrowsExceptionIfEmpty()
+    {
+        $value = '';
+
+        $this->propertyAccessor->setValue($value, 'foobar', 'bam');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function testGetValueWhenArrayValueIsNull()
@@ -316,12 +373,28 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->propertyAccessor->isReadable(new TestClassMagicCall('Bernhard'), 'magicCallProperty'));
     }
 
+<<<<<<< HEAD
     /**
      * @dataProvider getPathsWithUnexpectedType
      */
     public function testIsReadableReturnsFalseIfNotObjectOrArray($objectOrArray, $path)
     {
         $this->assertFalse($this->propertyAccessor->isReadable($objectOrArray, $path));
+=======
+    public function testIsReadableThrowsExceptionIfNotObjectOrArray()
+    {
+        $this->assertFalse($this->propertyAccessor->isReadable('baz', 'foobar'));
+    }
+
+    public function testIsReadableThrowsExceptionIfNull()
+    {
+        $this->assertFalse($this->propertyAccessor->isReadable(null, 'foobar'));
+    }
+
+    public function testIsReadableThrowsExceptionIfEmpty()
+    {
+        $this->assertFalse($this->propertyAccessor->isReadable('', 'foobar'));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**
@@ -377,12 +450,28 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->propertyAccessor->isWritable(new TestClassMagicCall('Bernhard'), 'magicCallProperty'));
     }
 
+<<<<<<< HEAD
     /**
      * @dataProvider getPathsWithUnexpectedType
      */
     public function testIsWritableReturnsFalseIfNotObjectOrArray($objectOrArray, $path)
     {
         $this->assertFalse($this->propertyAccessor->isWritable($objectOrArray, $path));
+=======
+    public function testNotObjectOrArrayIsNotWritable()
+    {
+        $this->assertFalse($this->propertyAccessor->isWritable('baz', 'foobar'));
+    }
+
+    public function testNullIsNotWritable()
+    {
+        $this->assertFalse($this->propertyAccessor->isWritable(null, 'foobar'));
+    }
+
+    public function testEmptyIsNotWritable()
+    {
+        $this->assertFalse($this->propertyAccessor->isWritable('', 'foobar'));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function getValidPropertyPaths()
@@ -419,6 +508,7 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
             array(array('index' => array('%!@$§.' => 'Bernhard')), '[index][%!@$§.]', 'Bernhard'),
             array((object) array('%!@$§' => 'Bernhard'), '%!@$§', 'Bernhard'),
             array((object) array('property' => (object) array('%!@$§' => 'Bernhard')), 'property.%!@$§', 'Bernhard'),
+<<<<<<< HEAD
 
             // nested objects and arrays
             array(array('foo' => new TestClass('bar')), '[foo].publicGetSetter', 'bar'),
@@ -427,6 +517,8 @@ class PropertyAccessorTest extends \PHPUnit_Framework_TestCase
             array(new TestClass(array('foo' => new TestClass('bar'))), 'publicGetter[foo].publicGetSetter', 'bar'),
             array(new TestClass(new TestClass(new TestClass('bar'))), 'publicGetter.publicGetter.publicGetSetter', 'bar'),
             array(new TestClass(array('foo' => array('baz' => new TestClass('bar')))), 'publicGetter[foo][baz].publicGetSetter', 'bar'),
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         );
     }
 

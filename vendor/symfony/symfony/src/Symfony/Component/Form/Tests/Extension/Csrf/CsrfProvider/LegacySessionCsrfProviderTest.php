@@ -13,9 +13,12 @@ namespace Symfony\Component\Form\Tests\Extension\Csrf\CsrfProvider;
 
 use Symfony\Component\Form\Extension\Csrf\CsrfProvider\SessionCsrfProvider;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 class LegacySessionCsrfProviderTest extends \PHPUnit_Framework_TestCase
 {
     protected $provider;

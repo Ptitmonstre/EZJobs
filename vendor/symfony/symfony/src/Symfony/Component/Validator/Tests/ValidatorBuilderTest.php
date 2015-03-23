@@ -110,9 +110,12 @@ class ValidatorBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->builder, $this->builder->setTranslationDomain('TRANS_DOMAIN'));
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyDefaultApiVersion()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -126,9 +129,12 @@ class ValidatorBuilderTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacySetApiVersion24()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -143,9 +149,12 @@ class ValidatorBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Symfony\Component\Validator\Validator\RecursiveValidator', $this->builder->getValidator());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacySetApiVersion24And25()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

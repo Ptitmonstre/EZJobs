@@ -107,7 +107,11 @@ class Client extends BaseClient
         $code = <<<EOF
 <?php
 
+<<<<<<< HEAD
 error_reporting($errorReporting & ~E_USER_DEPRECATED);
+=======
+error_reporting($errorReporting);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 require_once '$requirePath';
 

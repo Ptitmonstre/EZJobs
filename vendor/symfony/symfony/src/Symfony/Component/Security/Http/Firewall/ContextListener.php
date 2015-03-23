@@ -113,9 +113,12 @@ class ContextListener implements ListenerInterface
             return;
         }
 
+<<<<<<< HEAD
         $this->dispatcher->removeListener(KernelEvents::RESPONSE, array($this, 'onKernelResponse'));
         $this->registered = false;
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         if (null !== $this->logger) {
             $this->logger->debug('Write SecurityContext in the session');
         }

@@ -28,7 +28,11 @@ interface ParamConverterInterface
      * @param Request        $request       The request
      * @param ParamConverter $configuration Contains the name, class and options of the object
      *
+<<<<<<< HEAD
      * @return bool True if the object has been successfully set, else false
+=======
+     * @return bool    True if the object has been successfully set, else false
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function apply(Request $request, ParamConverter $configuration);
 
@@ -37,7 +41,11 @@ interface ParamConverterInterface
      *
      * @param ParamConverter $configuration Should be an instance of ParamConverter
      *
+<<<<<<< HEAD
      * @return bool True if the object is supported, else false
+=======
+     * @return bool    True if the object is supported, else false
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function supports(ParamConverter $configuration);
 }

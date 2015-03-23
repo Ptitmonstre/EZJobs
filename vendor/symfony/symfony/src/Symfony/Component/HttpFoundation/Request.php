@@ -609,8 +609,13 @@ class Request
      * The following header keys are supported:
      *
      *  * Request::HEADER_CLIENT_IP:    defaults to X-Forwarded-For   (see getClientIp())
+<<<<<<< HEAD
      *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getHost())
      *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getPort())
+=======
+     *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getClientHost())
+     *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getClientPort())
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *  * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
      *
      * Setting an empty value allows to disable the trusted header for the given key.
@@ -1009,7 +1014,11 @@ class Request
             }
 
             if (false !== $pos) {
+<<<<<<< HEAD
                 return (int) substr($host, $pos + 1);
+=======
+                return intval(substr($host, $pos + 1));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }
 
             return 'https' === $this->getScheme() ? 443 : 80;
@@ -1896,7 +1905,11 @@ class Request
 
         $len = strlen($prefix);
 
+<<<<<<< HEAD
         if (preg_match(sprintf('#^(%%[[:xdigit:]]{2}|.){%d}#', $len), $string, $match)) {
+=======
+        if (preg_match("#^(%[[:xdigit:]]{2}|.){{$len}}#", $string, $match)) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             return $match[0];
         }
 

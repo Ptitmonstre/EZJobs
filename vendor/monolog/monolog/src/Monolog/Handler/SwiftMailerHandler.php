@@ -21,7 +21,11 @@ use Monolog\Logger;
 class SwiftMailerHandler extends MailHandler
 {
     protected $mailer;
+<<<<<<< HEAD
     private $messageTemplate;
+=======
+    protected $message;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
     /**
      * @param \Swift_Mailer           $mailer  The mailer to use
@@ -32,9 +36,20 @@ class SwiftMailerHandler extends MailHandler
     public function __construct(\Swift_Mailer $mailer, $message, $level = Logger::ERROR, $bubble = true)
     {
         parent::__construct($level, $bubble);
+<<<<<<< HEAD
 
         $this->mailer = $mailer;
         $this->messageTemplate = $message;
+=======
+        $this->mailer  = $mailer;
+        if (!$message instanceof \Swift_Message && is_callable($message)) {
+            $message = call_user_func($message);
+        }
+        if (!$message instanceof \Swift_Message) {
+            throw new \InvalidArgumentException('You must provide either a Swift_Message instance or a callable returning it');
+        }
+        $this->message = $message;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**
@@ -42,6 +57,7 @@ class SwiftMailerHandler extends MailHandler
      */
     protected function send($content, array $records)
     {
+<<<<<<< HEAD
         $this->mailer->send($this->buildMessage($content, $records));
     }
 
@@ -83,5 +99,12 @@ class SwiftMailerHandler extends MailHandler
         }
 
         throw new \InvalidArgumentException('Invalid property '.$name);
+=======
+        $message = clone $this->message;
+        $message->setBody($content);
+        $message->setDate(time());
+
+        $this->mailer->send($message);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 }

@@ -43,7 +43,11 @@ class HipChatHandler extends SocketHandler
     private $token;
 
     /**
+<<<<<<< HEAD
      * @var string
+=======
+     * @var array
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     private $room;
 
@@ -53,7 +57,11 @@ class HipChatHandler extends SocketHandler
     private $name;
 
     /**
+<<<<<<< HEAD
      * @var bool
+=======
+     * @var boolean
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     private $notify;
 
@@ -63,18 +71,26 @@ class HipChatHandler extends SocketHandler
     private $format;
 
     /**
+<<<<<<< HEAD
      * @var string
      */
     private $host;
 
     /**
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param string  $token  HipChat API Token
      * @param string  $room   The room that should be alerted of the message (Id or Name)
      * @param string  $name   Name used in the "from" field
      * @param bool    $notify Trigger a notification in clients or not
      * @param int     $level  The minimum logging level at which this handler will be triggered
+<<<<<<< HEAD
      * @param bool    $bubble Whether the messages that are handled can bubble up the stack or not
      * @param bool    $useSSL Whether to connect via SSL.
+=======
+     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
+     * @param Boolean $useSSL Whether to connect via SSL.
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param string  $format The format of the messages (default to text, can be set to html if you have html in the messages)
      * @param string  $host   The HipChat server hostname.
      */
@@ -92,7 +108,10 @@ class HipChatHandler extends SocketHandler
         $this->notify = $notify;
         $this->room = $room;
         $this->format = $format;
+<<<<<<< HEAD
         $this->host = $host;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**
@@ -137,7 +156,11 @@ class HipChatHandler extends SocketHandler
     private function buildHeader($content)
     {
         $header = "POST /v1/rooms/message?format=json&auth_token=".$this->token." HTTP/1.1\r\n";
+<<<<<<< HEAD
         $header .= "Host: {$this->host}\r\n";
+=======
+        $header .= "Host: api.hipchat.com\r\n";
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
         $header .= "Content-Length: " . strlen($content) . "\r\n";
         $header .= "\r\n";
@@ -235,19 +258,31 @@ class HipChatHandler extends SocketHandler
             }
 
             $messages[] = $record['message'];
+<<<<<<< HEAD
             $messageStr = implode(PHP_EOL, $messages);
+=======
+            $messgeStr = implode(PHP_EOL, $messages);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             $formattedMessages[] = $this->getFormatter()->format($record);
             $formattedMessageStr = implode('', $formattedMessages);
 
             $batchRecord = array(
+<<<<<<< HEAD
                 'message'   => $messageStr,
+=======
+                'message'   => $messgeStr,
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 'formatted' => $formattedMessageStr,
                 'context'   => array(),
                 'extra'     => array(),
             );
 
             if (!$this->validateStringLength($batchRecord['formatted'], static::MAXIMUM_MESSAGE_LENGTH)) {
+<<<<<<< HEAD
                 // Pop the last message and implode the remaining messages
+=======
+                // Pop the last message and implode the remainging messages
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 $lastMessage = array_pop($messages);
                 $lastFormattedMessage = array_pop($formattedMessages);
                 $batchRecord['message'] = implode(PHP_EOL, $messages);

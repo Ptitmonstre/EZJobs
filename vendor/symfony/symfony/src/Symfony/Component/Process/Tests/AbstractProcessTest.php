@@ -841,13 +841,22 @@ abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
 
     public function testStartAfterATimeout()
     {
+<<<<<<< HEAD
         $process = $this->getProcess(sprintf('php -r %s', escapeshellarg('$n = 1000; while ($n--) {echo \'\'; usleep(1000); }')));
+=======
+        $process = $this->getProcess('php -r "$n = 1000; while ($n--) {echo \'\'; usleep(1000); }"');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $process->setTimeout(0.1);
 
         try {
             $process->run();
+<<<<<<< HEAD
             $this->fail('A RuntimeException should have been raised.');
         } catch (RuntimeException $e) {
+=======
+            $this->fail('An exception should have been raised.');
+        } catch (\Exception $e) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
         $process->start();
         usleep(1000);

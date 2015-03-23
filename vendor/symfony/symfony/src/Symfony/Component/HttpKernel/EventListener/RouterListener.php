@@ -132,7 +132,12 @@ class RouterListener implements EventSubscriberInterface
             }
 
             $request->attributes->add($parameters);
+<<<<<<< HEAD
             unset($parameters['_route'], $parameters['_controller']);
+=======
+            unset($parameters['_route']);
+            unset($parameters['_controller']);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             $request->attributes->set('_route_params', $parameters);
         } catch (ResourceNotFoundException $e) {
             $message = sprintf('No route found for "%s %s"', $request->getMethod(), $request->getPathInfo());

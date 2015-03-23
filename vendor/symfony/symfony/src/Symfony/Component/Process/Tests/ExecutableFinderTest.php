@@ -20,7 +20,11 @@ class ExecutableFinderTest extends \PHPUnit_Framework_TestCase
 {
     private $path;
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         if ($this->path) {
             // Restore path if it was changed.

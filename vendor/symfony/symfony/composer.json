@@ -68,7 +68,10 @@
         "symfony/yaml": "self.version"
     },
     "require-dev": {
+<<<<<<< HEAD
         "symfony/phpunit-bridge": "~2.7",
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         "doctrine/data-fixtures": "1.0.*",
         "doctrine/dbal": "~2.2",
         "doctrine/orm": "~2.2,>=2.2.3",

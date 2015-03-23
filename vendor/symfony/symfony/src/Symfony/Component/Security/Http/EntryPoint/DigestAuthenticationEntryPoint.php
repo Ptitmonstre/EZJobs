@@ -50,7 +50,11 @@ class DigestAuthenticationEntryPoint implements AuthenticationEntryPointInterfac
         $authenticateHeader = sprintf('Digest realm="%s", qop="auth", nonce="%s"', $this->realmName, $nonceValueBase64);
 
         if ($authException instanceof NonceExpiredException) {
+<<<<<<< HEAD
             $authenticateHeader .= ', stale="true"';
+=======
+            $authenticateHeader = $authenticateHeader.', stale="true"';
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         if (null !== $this->logger) {

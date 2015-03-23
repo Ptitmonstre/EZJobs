@@ -13,7 +13,10 @@ namespace Symfony\Component\Serializer\Normalizer;
 
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
+<<<<<<< HEAD
 use Symfony\Component\Serializer\Exception\LogicException;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Serializer\Exception\RuntimeException;
 
 /**
@@ -169,7 +172,11 @@ class GetSetMethodNormalizer extends SerializerAwareNormalizer implements Normal
                 }
                 if (null !== $attributeValue && !is_scalar($attributeValue)) {
                     if (!$this->serializer instanceof NormalizerInterface) {
+<<<<<<< HEAD
                         throw new LogicException(sprintf('Cannot normalize attribute "%s" because injected serializer is not a normalizer', $attributeName));
+=======
+                        throw new \LogicException(sprintf('Cannot normalize attribute "%s" because injected serializer is not a normalizer', $attributeName));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                     }
 
                     $attributeValue = $this->serializer->normalize($attributeValue, $format, $context);

@@ -5,7 +5,10 @@ namespace Sensio\Bundle\FrameworkExtraBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Sensio\Bundle\FrameworkExtraBundle\DependencyInjection\Compiler\AddParamConverterPass;
+<<<<<<< HEAD
 use Sensio\Bundle\FrameworkExtraBundle\DependencyInjection\Compiler\LegacyPass;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 /*
  * This file is part of the Symfony framework.
@@ -28,6 +31,9 @@ class SensioFrameworkExtraBundle extends Bundle
         parent::build($container);
 
         $container->addCompilerPass(new AddParamConverterPass());
+<<<<<<< HEAD
         $container->addCompilerPass(new LegacyPass());
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 }

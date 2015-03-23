@@ -17,12 +17,18 @@ use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Output\StreamOutput;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
 class LegacyDialogHelperTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
+=======
+class LegacyDialogHelperTest extends \PHPUnit_Framework_TestCase
+{
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
     }
@@ -180,7 +186,11 @@ class LegacyDialogHelperTest extends \PHPUnit_Framework_TestCase
     protected function getInputStream($input)
     {
         $stream = fopen('php://memory', 'r+', false);
+<<<<<<< HEAD
         fwrite($stream, $input);
+=======
+        fputs($stream, $input);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         rewind($stream);
 
         return $stream;

@@ -12,7 +12,10 @@
 namespace Symfony\Component\Serializer\Normalizer;
 
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
+<<<<<<< HEAD
 use Symfony\Component\Serializer\Exception\LogicException;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Serializer\Exception\RuntimeException;
 
 /**
@@ -101,10 +104,13 @@ class PropertyNormalizer extends SerializerAwareNormalizer implements Normalizer
                 $attributeValue = call_user_func($this->callbacks[$property->name], $attributeValue);
             }
             if (null !== $attributeValue && !is_scalar($attributeValue)) {
+<<<<<<< HEAD
                 if (!$this->serializer instanceof NormalizerInterface) {
                     throw new LogicException(sprintf('Cannot normalize attribute "%s" because injected serializer is not a normalizer', $property->name));
                 }
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 $attributeValue = $this->serializer->normalize($attributeValue, $format);
             }
 

@@ -20,15 +20,22 @@ class GlobalVariablesTest extends TestCase
     private $container;
     private $globals;
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->container = new Container();
         $this->globals = new GlobalVariables($this->container);
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetSecurity()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

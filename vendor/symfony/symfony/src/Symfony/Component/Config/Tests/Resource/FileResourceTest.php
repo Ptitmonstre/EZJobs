@@ -17,13 +17,20 @@ class FileResourceTest extends \PHPUnit_Framework_TestCase
 {
     protected $resource;
     protected $file;
+<<<<<<< HEAD
     protected $time;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
     protected function setUp()
     {
         $this->file = realpath(sys_get_temp_dir()).'/tmp.xml';
+<<<<<<< HEAD
         $this->time = time();
         touch($this->file, $this->time);
+=======
+        touch($this->file);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $this->resource = new FileResource($this->file);
     }
 
@@ -44,12 +51,20 @@ class FileResourceTest extends \PHPUnit_Framework_TestCase
 
     public function testIsFresh()
     {
+<<<<<<< HEAD
         $this->assertTrue($this->resource->isFresh($this->time), '->isFresh() returns true if the resource has not changed in same second');
         $this->assertTrue($this->resource->isFresh($this->time + 10), '->isFresh() returns true if the resource has not changed');
         $this->assertFalse($this->resource->isFresh($this->time - 86400), '->isFresh() returns false if the resource has been updated');
 
         $resource = new FileResource('/____foo/foobar'.rand(1, 999999));
         $this->assertFalse($resource->isFresh($this->time), '->isFresh() returns false if the resource does not exist');
+=======
+        $this->assertTrue($this->resource->isFresh(time() + 10), '->isFresh() returns true if the resource has not changed');
+        $this->assertFalse($this->resource->isFresh(time() - 86400), '->isFresh() returns false if the resource has been updated');
+
+        $resource = new FileResource('/____foo/foobar'.rand(1, 999999));
+        $this->assertFalse($resource->isFresh(time()), '->isFresh() returns false if the resource does not exist');
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function testSerializeUnserialize()

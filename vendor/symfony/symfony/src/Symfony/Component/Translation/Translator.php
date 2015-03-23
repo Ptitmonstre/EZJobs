@@ -351,6 +351,15 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
             return;
         }
 
+<<<<<<< HEAD
+=======
+        if (null === $this->cacheDir) {
+            $this->initialize();
+
+            return $this->loadCatalogue($locale);
+        }
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $this->assertValidLocale($locale);
         $cache = new ConfigCache($this->cacheDir.'/catalogue.'.$locale.'.php', $this->debug);
         if (!$cache->isFresh()) {

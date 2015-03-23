@@ -138,7 +138,12 @@ class FormBuilder extends FormConfigBuilder implements \IteratorAggregate, FormB
             throw new BadMethodCallException('FormBuilder methods cannot be accessed anymore once the builder is turned into a FormConfigInterface instance.');
         }
 
+<<<<<<< HEAD
         unset($this->unresolvedChildren[$name], $this->children[$name]);
+=======
+        unset($this->unresolvedChildren[$name]);
+        unset($this->children[$name]);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         return $this;
     }

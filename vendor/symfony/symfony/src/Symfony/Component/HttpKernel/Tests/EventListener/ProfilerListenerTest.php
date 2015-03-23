@@ -24,8 +24,11 @@ class ProfilerListenerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Test to ensure BC without RequestStack
+<<<<<<< HEAD
      *
      * @group legacy
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function testLegacyEventsWithoutRequestStack()
     {

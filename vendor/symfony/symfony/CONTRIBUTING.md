@@ -1,7 +1,11 @@
 Contributing
 ------------
 
+<<<<<<< HEAD
 Symfony is an open source, community-driven project.
+=======
+Symfony2 is an open source, community-driven project.
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 If you'd like to contribute, please read the following documents:
 
@@ -12,6 +16,7 @@ If you'd like to contribute, please read the following documents:
 * [Pull Request Template][3]: Template header to use in your pull request
   description;
 
+<<<<<<< HEAD
 ```markdown
 | Q             | A
 | ------------- | ---
@@ -25,6 +30,8 @@ If you'd like to contribute, please read the following documents:
 | Doc PR        | symfony/symfony-docs#1234
 ```
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 * [Backwards Compatibility][4]: Backward compatibility rules.
 
 [1]: http://symfony.com/doc/current/contributing/code/index.html

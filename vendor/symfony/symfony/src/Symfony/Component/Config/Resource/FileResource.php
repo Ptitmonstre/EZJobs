@@ -60,7 +60,11 @@ class FileResource implements ResourceInterface, \Serializable
             return false;
         }
 
+<<<<<<< HEAD
         return filemtime($this->resource) <= $timestamp;
+=======
+        return filemtime($this->resource) < $timestamp;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     public function serialize()

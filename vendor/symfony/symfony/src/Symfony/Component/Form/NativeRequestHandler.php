@@ -98,8 +98,13 @@ class NativeRequestHandler implements RequestHandlerInterface
             }
 
             $fixedFiles = array();
+<<<<<<< HEAD
             foreach ($_FILES as $fileKey => $file) {
                 $fixedFiles[$fileKey] = self::stripEmptyFiles(self::fixPhpFilesArray($file));
+=======
+            foreach ($_FILES as $name => $file) {
+                $fixedFiles[$name] = self::stripEmptyFiles(self::fixPhpFilesArray($file));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }
 
             if ('' === $name) {

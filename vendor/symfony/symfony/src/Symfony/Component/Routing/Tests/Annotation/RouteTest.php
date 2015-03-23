@@ -47,9 +47,12 @@ class RouteTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetPattern()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

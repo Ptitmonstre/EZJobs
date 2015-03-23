@@ -22,7 +22,11 @@ class ConfigCacheTest extends \PHPUnit_Framework_TestCase
 
     private $metaFile = null;
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->resourceFile = tempnam(sys_get_temp_dir(), '_resource');
         $this->cacheFile = tempnam(sys_get_temp_dir(), 'config_');
@@ -32,7 +36,11 @@ class ConfigCacheTest extends \PHPUnit_Framework_TestCase
         $this->generateMetaFile();
     }
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $files = array($this->cacheFile, $this->metaFile, $this->resourceFile);
 
@@ -128,7 +136,11 @@ class ConfigCacheTest extends \PHPUnit_Framework_TestCase
 
     private function makeCacheStale()
     {
+<<<<<<< HEAD
         touch($this->cacheFile, filemtime($this->resourceFile) - 3600);
+=======
+        touch($this->cacheFile, time() - 3600);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     private function generateMetaFile()

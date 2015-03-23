@@ -11,6 +11,10 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 /**
  * Sampling handler
  *

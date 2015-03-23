@@ -405,6 +405,7 @@ class UrlMatcherTest extends \PHPUnit_Framework_TestCase
         $matcher = new UrlMatcher($coll, new RequestContext('', 'GET', 'example.com'));
         $matcher->match('/foo/bar');
     }
+<<<<<<< HEAD
 
     /**
      * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
@@ -426,4 +427,6 @@ class UrlMatcherTest extends \PHPUnit_Framework_TestCase
         $matcher = new UrlMatcher($coll, new RequestContext('', 'GET', 'en.example.com'));
         $this->assertEquals(array('_route' => 'foo', 'locale' => 'en'), $matcher->match('/'));
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

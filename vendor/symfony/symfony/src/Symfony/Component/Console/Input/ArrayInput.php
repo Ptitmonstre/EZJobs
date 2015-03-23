@@ -100,10 +100,15 @@ class ArrayInput extends Input
         $values = (array) $values;
 
         foreach ($this->parameters as $k => $v) {
+<<<<<<< HEAD
             if (is_int($k)) {
                 if (in_array($v, $values)) {
                     return true;
                 }
+=======
+            if (is_int($k) && in_array($v, $values)) {
+                return true;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             } elseif (in_array($k, $values)) {
                 return $v;
             }

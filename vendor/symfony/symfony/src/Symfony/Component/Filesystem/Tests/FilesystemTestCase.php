@@ -37,7 +37,11 @@ class FilesystemTestCase extends \PHPUnit_Framework_TestCase
         }
     }
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->umask = umask(0);
         $this->workspace = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.time().rand(0, 1000);
@@ -45,7 +49,11 @@ class FilesystemTestCase extends \PHPUnit_Framework_TestCase
         $this->workspace = realpath($this->workspace);
     }
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->clean($this->workspace);
         umask($this->umask);

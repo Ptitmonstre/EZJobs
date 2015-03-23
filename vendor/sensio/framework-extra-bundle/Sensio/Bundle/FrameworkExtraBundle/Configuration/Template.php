@@ -29,7 +29,11 @@ class Template extends ConfigurationAnnotation
     protected $template;
 
     /**
+<<<<<<< HEAD
      * The template engine used when a specific template isn't specified
+=======
+     * The template engine used when a specific template isnt specified
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *
      * @var string
      */
@@ -60,7 +64,11 @@ class Template extends ConfigurationAnnotation
     }
 
     /**
+<<<<<<< HEAD
      * @param bool $streamable
+=======
+     * @param bool    $streamable
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function setIsStreamable($streamable)
     {

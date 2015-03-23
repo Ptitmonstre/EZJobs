@@ -83,7 +83,11 @@ class TemplateGuesser
     /**
      * Returns the Bundle instance in which the given class name is located.
      *
+<<<<<<< HEAD
      * @param  string      $class A fully qualified controller class name
+=======
+     * @param  string $class  A fully qualified controller class name
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @return Bundle|null $bundle A Bundle instance
      */
     protected function getBundleForClass($class)

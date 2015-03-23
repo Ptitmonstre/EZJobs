@@ -191,7 +191,10 @@ class Configuration implements ConfigurationInterface
     {
         $node
             ->children()
+<<<<<<< HEAD
                 ->scalarNode('url')->info('A URL with connection information; any parameter value parsed from this string will override explicitly set parameters')->end()
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 ->scalarNode('dbname')->end()
                 ->scalarNode('host')->defaultValue('localhost')->end()
                 ->scalarNode('port')->defaultNull()->end()

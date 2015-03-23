@@ -14,12 +14,18 @@ namespace Symfony\Component\Console\Tests\Helper;
 use Symfony\Component\Console\Helper\ProgressHelper;
 use Symfony\Component\Console\Output\StreamOutput;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
 class LegacyProgressHelperTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
+=======
+class LegacyProgressHelperTest extends \PHPUnit_Framework_TestCase
+{
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
     }

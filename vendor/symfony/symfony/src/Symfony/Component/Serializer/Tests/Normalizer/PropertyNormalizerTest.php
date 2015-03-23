@@ -195,6 +195,7 @@ class PropertyNormalizerTest extends \PHPUnit_Framework_TestCase
             ),
         );
     }
+<<<<<<< HEAD
 
     /**
      * @expectedException \Symfony\Component\Serializer\Exception\LogicException
@@ -211,6 +212,8 @@ class PropertyNormalizerTest extends \PHPUnit_Framework_TestCase
 
         $this->normalizer->normalize($obj, 'any');
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }
 
 class PropertyDummy

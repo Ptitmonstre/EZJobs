@@ -234,7 +234,11 @@ class Finder implements \IteratorAggregate, \Countable
      *   $finder->date('> now - 2 hours');
      *   $finder->date('>= 2005-10-15');
      *
+<<<<<<< HEAD
      * @param string $date A date range string
+=======
+     * @param string $date A date rage string
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      *
      * @return Finder The current Finder instance
      *
@@ -436,9 +440,15 @@ class Finder implements \IteratorAggregate, \Countable
     public function ignoreDotFiles($ignoreDotFiles)
     {
         if ($ignoreDotFiles) {
+<<<<<<< HEAD
             $this->ignore |= static::IGNORE_DOT_FILES;
         } else {
             $this->ignore &= ~static::IGNORE_DOT_FILES;
+=======
+            $this->ignore = $this->ignore | static::IGNORE_DOT_FILES;
+        } else {
+            $this->ignore = $this->ignore & ~static::IGNORE_DOT_FILES;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         return $this;
@@ -458,9 +468,15 @@ class Finder implements \IteratorAggregate, \Countable
     public function ignoreVCS($ignoreVCS)
     {
         if ($ignoreVCS) {
+<<<<<<< HEAD
             $this->ignore |= static::IGNORE_VCS_FILES;
         } else {
             $this->ignore &= ~static::IGNORE_VCS_FILES;
+=======
+            $this->ignore = $this->ignore | static::IGNORE_VCS_FILES;
+        } else {
+            $this->ignore = $this->ignore & ~static::IGNORE_VCS_FILES;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         return $this;

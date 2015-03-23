@@ -490,9 +490,12 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyAsText()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -504,9 +507,12 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
         $this->assertStringEqualsFile(self::$fixturesPath.'/application_astext2.txt', $this->normalizeLineBreaks($application->asText('foo')), '->asText() returns a text representation of the application');
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyAsXml()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

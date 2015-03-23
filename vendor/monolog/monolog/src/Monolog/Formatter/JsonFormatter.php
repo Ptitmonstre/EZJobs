@@ -39,7 +39,11 @@ class JsonFormatter implements FormatterInterface
      * The batch mode option configures the formatting style for
      * multiple records. By default, multiple records will be
      * formatted as a JSON-encoded array. However, for
+<<<<<<< HEAD
      * compatibility with some API endpoints, alternative styles
+=======
+     * compatibility with some API endpoints, alternive styles
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * are available.
      *
      * @return int

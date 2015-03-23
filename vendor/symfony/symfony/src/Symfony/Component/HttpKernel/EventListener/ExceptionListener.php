@@ -57,13 +57,22 @@ class ExceptionListener implements EventSubscriberInterface
         try {
             $response = $event->getKernel()->handle($request, HttpKernelInterface::SUB_REQUEST, true);
         } catch (\Exception $e) {
+<<<<<<< HEAD
             $this->logException($e, sprintf('Exception thrown when handling an exception (%s: %s at %s line %s)', get_class($e), $e->getMessage(), $e->getFile(), $e->getLine()), false);
+=======
+            $this->logException($exception, sprintf('Exception thrown when handling an exception (%s: %s)', get_class($e), $e->getMessage()), false);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
             // set handling to false otherwise it wont be able to handle further more
             $handling = false;
 
+<<<<<<< HEAD
             // throwing $e, not $exception, is on purpose: fixing error handling code paths is the most important
             throw $e;
+=======
+            // re-throw the exception from within HttpKernel as this is a catch-all
+            return;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         $event->setResponse($response);
@@ -81,7 +90,11 @@ class ExceptionListener implements EventSubscriberInterface
     /**
      * Logs an exception.
      *
+<<<<<<< HEAD
      * @param \Exception $exception The \Exception instance
+=======
+     * @param \Exception $exception The original \Exception instance
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param string     $message   The error message to log
      * @param bool       $original  False when the handling of the exception thrown another exception
      */

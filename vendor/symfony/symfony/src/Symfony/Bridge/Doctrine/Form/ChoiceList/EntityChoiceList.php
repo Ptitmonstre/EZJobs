@@ -218,10 +218,15 @@ class EntityChoiceList extends ObjectChoiceList
         if (!$this->loaded) {
             // Optimize performance in case we have an entity loader and
             // a single-field identifier
+<<<<<<< HEAD
             if ($this->idAsValue) {
                 $unorderedEntities = $this->entityLoader
                     ? $this->entityLoader->getEntitiesByIds($this->idField, $values)
                     : $this->em->getRepository($this->class)->findBy(array($this->idField => $values));
+=======
+            if ($this->idAsValue && $this->entityLoader) {
+                $unorderedEntities = $this->entityLoader->getEntitiesByIds($this->idField, $values);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 $entitiesByValue = array();
                 $entities = array();
 

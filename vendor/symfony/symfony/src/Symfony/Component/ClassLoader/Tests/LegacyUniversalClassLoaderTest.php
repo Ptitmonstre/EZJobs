@@ -13,12 +13,18 @@ namespace Symfony\Component\ClassLoader\Tests;
 
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
 class LegacyUniversalClassLoaderTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
+=======
+class LegacyUniversalClassLoaderTest extends \PHPUnit_Framework_TestCase
+{
+    public function setUp()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
     }

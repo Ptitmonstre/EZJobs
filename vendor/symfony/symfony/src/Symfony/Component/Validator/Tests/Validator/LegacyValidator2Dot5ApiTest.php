@@ -17,9 +17,12 @@ use Symfony\Component\Validator\DefaultTranslator;
 use Symfony\Component\Validator\MetadataFactoryInterface;
 use Symfony\Component\Validator\Validator\LegacyValidator;
 
+<<<<<<< HEAD
 /**
  * @group legacy
  */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 class LegacyValidator2Dot5ApiTest extends Abstract2Dot5ApiTest
 {
     protected function setUp()

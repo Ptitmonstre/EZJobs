@@ -67,7 +67,12 @@ abstract class AbstractRendererEngine implements FormRendererEngineInterface
         // Unset instead of resetting to an empty array, in order to allow
         // implementations (like TwigRendererEngine) to check whether $cacheKey
         // is set at all.
+<<<<<<< HEAD
         unset($this->resources[$cacheKey], $this->resourceHierarchyLevels[$cacheKey]);
+=======
+        unset($this->resources[$cacheKey]);
+        unset($this->resourceHierarchyLevels[$cacheKey]);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**

@@ -241,6 +241,7 @@ class ProfilerController
             $token = $session->get('_profiler_search_token');
         }
 
+<<<<<<< HEAD
         return new Response(
             $this->twig->render('@WebProfiler/Profiler/search.html.twig', array(
                 'token' => $token,
@@ -255,6 +256,18 @@ class ProfilerController
             200,
             array('Content-Type' => 'text/html')
         );
+=======
+        return new Response($this->twig->render('@WebProfiler/Profiler/search.html.twig', array(
+            'token' => $token,
+            'ip' => $ip,
+            'method' => $method,
+            'url' => $url,
+            'start' => $start,
+            'end' => $end,
+            'limit' => $limit,
+            'request' => $request,
+        )), 200, array('Content-Type' => 'text/html'));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     }
 
     /**

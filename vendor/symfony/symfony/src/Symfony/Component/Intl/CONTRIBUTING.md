@@ -10,7 +10,11 @@ Preparation
 To prepare, you need to install the development dependencies of the component.
 
     $ cd /path/to/Symfony/Component/Intl
+<<<<<<< HEAD
     $ composer install
+=======
+    $ composer.phar install --dev
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 Determining your ICU version
 ---------------------------

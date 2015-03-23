@@ -327,7 +327,11 @@ EOF
     {
         $crawler = $this->createTestCrawler()->filterXPath('//ul[1]/li');
         $nodes = $crawler->reduce(function ($node, $i) {
+<<<<<<< HEAD
             return $i !== 1;
+=======
+            return $i == 1 ? false : true;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         });
         $this->assertNotSame($nodes, $crawler, '->reduce() returns a new instance of a crawler');
         $this->assertInstanceOf('Symfony\\Component\\DomCrawler\\Crawler', $nodes, '->reduce() returns a new instance of a crawler');

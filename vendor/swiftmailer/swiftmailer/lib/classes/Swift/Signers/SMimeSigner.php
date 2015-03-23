@@ -26,7 +26,10 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
     protected $signOptions;
     protected $encryptOptions;
     protected $encryptCipher;
+<<<<<<< HEAD
     protected $extraCerts = null;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
     /**
      * @var Swift_StreamFilters_StringReplacementFilterFactory
@@ -89,11 +92,18 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
      * @param string       $certificate
      * @param string|array $privateKey  If the key needs an passphrase use array('file-location', 'passphrase') instead
      * @param int          $signOptions Bitwise operator options for openssl_pkcs7_sign()
+<<<<<<< HEAD
      * @param string       $extraCerts A file containing intermediate certificates needed by the signing certificate
      *
      * @return Swift_Signers_SMimeSigner
      */
     public function setSignCertificate($certificate, $privateKey = null, $signOptions = PKCS7_DETACHED, $extraCerts = null)
+=======
+     *
+     * @return Swift_Signers_SMimeSigner
+     */
+    public function setSignCertificate($certificate, $privateKey = null, $signOptions = PKCS7_DETACHED)
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->signCertificate = 'file://'.str_replace('\\', '/', realpath($certificate));
 
@@ -107,9 +117,12 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
         }
 
         $this->signOptions = $signOptions;
+<<<<<<< HEAD
         if (null !== $extraCerts) {
             $this->extraCerts = str_replace('\\', '/', realpath($extraCerts));
         }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         return $this;
     }
@@ -292,12 +305,16 @@ class Swift_Signers_SMimeSigner implements Swift_Signers_BodySigner
     {
         $signedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
 
+<<<<<<< HEAD
         $args = array($outputStream->getPath(), $signedMessageStream->getPath(), $this->signCertificate, $this->signPrivateKey, array(), $this->signOptions);
         if (null !== $this->extraCerts) {
             $args[] = $this->extraCerts;
         }
 
         if (!call_user_func_array('openssl_pkcs7_sign', $args)) {
+=======
+        if (!openssl_pkcs7_sign($outputStream->getPath(), $signedMessageStream->getPath(), $this->signCertificate, $this->signPrivateKey, array(), $this->signOptions)) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             throw new Swift_IoException(sprintf('Failed to sign S/Mime message. Error: "%s".', openssl_error_string()));
         }
 

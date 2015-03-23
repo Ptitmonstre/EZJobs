@@ -17,8 +17,11 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface;
+<<<<<<< HEAD
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Role\RoleHierarchyInterface;
@@ -31,17 +34,26 @@ use Symfony\Component\Security\Core\Role\RoleHierarchyInterface;
 class SecurityListener implements EventSubscriberInterface
 {
     private $securityContext;
+<<<<<<< HEAD
     private $tokenStorage;
     private $authChecker;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     private $language;
     private $trustResolver;
     private $roleHierarchy;
 
+<<<<<<< HEAD
     public function __construct(SecurityContextInterface $securityContext = null, ExpressionLanguage $language = null, AuthenticationTrustResolverInterface $trustResolver = null, RoleHierarchyInterface $roleHierarchy = null, TokenStorageInterface $tokenStorage = null, AuthorizationCheckerInterface $authChecker = null)
     {
         $this->securityContext = $securityContext;
         $this->tokenStorage = $tokenStorage ?: $securityContext;
         $this->authChecker = $authChecker ?: $securityContext;
+=======
+    public function __construct(SecurityContextInterface $securityContext = null, ExpressionLanguage $language = null, AuthenticationTrustResolverInterface $trustResolver = null, RoleHierarchyInterface $roleHierarchy = null)
+    {
+        $this->securityContext = $securityContext;
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $this->language = $language;
         $this->trustResolver = $trustResolver;
         $this->roleHierarchy = $roleHierarchy;
@@ -54,7 +66,11 @@ class SecurityListener implements EventSubscriberInterface
             return;
         }
 
+<<<<<<< HEAD
         if (null === $this->tokenStorage || null === $this->trustResolver) {
+=======
+        if (null === $this->securityContext || null === $this->trustResolver) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             throw new \LogicException('To use the @Security tag, you need to install the Symfony Security bundle.');
         }
 
@@ -70,7 +86,11 @@ class SecurityListener implements EventSubscriberInterface
     // code should be sync with Symfony\Component\Security\Core\Authorization\Voter\ExpressionVoter
     private function getVariables(Request $request)
     {
+<<<<<<< HEAD
         $token = $this->tokenStorage->getToken();
+=======
+        $token = $this->securityContext->getToken();
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
         if (null !== $this->roleHierarchy) {
             $roles = $this->roleHierarchy->getReachableRoles($token->getRoles());
@@ -85,8 +105,12 @@ class SecurityListener implements EventSubscriberInterface
             'request' => $request,
             'roles' => array_map(function ($role) { return $role->getRole(); }, $roles),
             'trust_resolver' => $this->trustResolver,
+<<<<<<< HEAD
             // needed for the is_granted expression function
             'auth_checker' => $this->authChecker,
+=======
+            'security_context' => $this->securityContext,
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         );
 
         // controller variables should also be accessible

@@ -7,6 +7,7 @@ in 2.6 minor versions.
 To get the diff for a specific change, go to https://github.com/symfony/symfony/commit/XXX where XXX is the change hash
 To get the diff between two versions, go to https://github.com/symfony/symfony/compare/v2.6.0...v2.6.1
 
+<<<<<<< HEAD
 * 2.6.5 (2015-03-17)
 
  * bug #13944 [HttpKernel] UriSigner::buildUrl - default params for http_build_query  (Jakub Simon)
@@ -54,6 +55,8 @@ To get the diff between two versions, go to https://github.com/symfony/symfony/c
  * bug #13577 [HttpKernel] Added use of instantiateController method provided in (#12022) (stavichenko)
  * bug #13567 [Routing] make host matching case-insensitive (Tobion)
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 * 2.6.4 (2015-02-02)
 
  * bug #13489 [VarDumper] CSS fix (Arrilot)

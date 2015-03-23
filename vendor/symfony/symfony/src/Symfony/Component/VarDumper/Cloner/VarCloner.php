@@ -38,9 +38,14 @@ class VarCloner extends AbstractCloner
         $maxItems = $this->maxItems;
         $maxString = $this->maxString;
         $cookie = (object) array();     // Unique object used to detect hard references
+<<<<<<< HEAD
         $gid = uniqid(mt_rand(), true); // Unique string used to detect the special $GLOBALS variable
         $a = null;                      // Array cast for nested structures
         $stub = null;                   // Stub capturing the main properties of an original item value
+=======
+        $a = null;                      // Array cast for nested structures
+        $stub = null;                   // Stub capturing the main properties of an original item value,
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                                         // or null if the original value is used directly
         $zval = array(                  // Main properties of the current value
             'type' => null,
@@ -122,6 +127,7 @@ class VarCloner extends AbstractCloner
                             $stub->value = $zval['array_count'] ?: count($v);
 
                             $a = $v;
+<<<<<<< HEAD
 
                             // Copies of $GLOBALS have very strange behavior,
                             // let's detect them with some black magic
@@ -130,12 +136,23 @@ class VarCloner extends AbstractCloner
                             // Happens with copies of $GLOBALS
                             if (isset($v[$gid])) {
                                 unset($v[$gid]);
+=======
+                            $a[] = null;
+                            $h = count($v);
+                            array_pop($a);
+
+                            // Happens with copies of $GLOBALS
+                            if ($h !== $stub->value) {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                                 $a = array();
                                 foreach ($v as $gk => &$gv) {
                                     $a[$gk] =& $gv;
                                 }
+<<<<<<< HEAD
                             } else {
                                 $a = $v;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                             }
                         }
                         break;

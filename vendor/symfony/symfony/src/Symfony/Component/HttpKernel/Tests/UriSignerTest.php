@@ -36,6 +36,7 @@ class UriSignerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertTrue($signer->sign('http://example.com/foo?foo=bar&bar=foo') === $signer->sign('http://example.com/foo?bar=foo&foo=bar'));
     }
+<<<<<<< HEAD
 
     public function testCheckWithDifferentArgSeparator()
     {
@@ -48,4 +49,6 @@ class UriSignerTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertTrue($signer->check($signer->sign('http://example.com/foo?foo=bar&baz=bay')));
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

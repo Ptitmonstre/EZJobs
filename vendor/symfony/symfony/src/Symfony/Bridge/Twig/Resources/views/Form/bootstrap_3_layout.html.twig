@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% use "form_div_layout.html.twig" %}
+=======
+{% extends "form_div_layout.html.twig" %}
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 {# Widgets #}
 
@@ -15,7 +19,11 @@
 {%- endblock textarea_widget %}
 
 {% block button_widget -%}
+<<<<<<< HEAD
     {% set attr = attr|merge({class: (attr.class|default('btn-default') ~ ' btn')|trim}) %}
+=======
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' btn')|trim}) %}
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {{- parent() -}}
 {%- endblock %}
 
@@ -164,12 +172,20 @@
         {% if parent_label_class is defined %}
             {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' ' ~ parent_label_class)|trim}) %}
         {% endif %}
+<<<<<<< HEAD
         {% if label is not sameas(false) and label is empty %}
+=======
+        {% if label is empty %}
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             {% set label = name|humanize %}
         {% endif %}
         <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
                 {{ widget|raw }}
+<<<<<<< HEAD
                 {{ label is not sameas(false) ? label|trans({}, translation_domain) }}
+=======
+                {{ label|trans({}, translation_domain) }}
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         </label>
     {% endif %}
 {% endblock checkbox_radio_label %}

@@ -14,8 +14,11 @@ namespace Symfony\Bundle\FrameworkBundle\Command;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+<<<<<<< HEAD
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 /**
  * A console command for dumping available configuration reference.
@@ -72,8 +75,11 @@ abstract class AbstractConfigCommand extends ContainerDebugCommand
             }
         }
 
+<<<<<<< HEAD
         $this->initializeExtensions($bundles);
 
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         return $extension;
     }
 
@@ -87,6 +93,7 @@ abstract class AbstractConfigCommand extends ContainerDebugCommand
             throw new \LogicException(sprintf('Configuration class "%s" should implement ConfigurationInterface in order to be dumpable', get_class($configuration)));
         }
     }
+<<<<<<< HEAD
 
     private function initializeExtensions($bundles)
     {
@@ -105,4 +112,6 @@ abstract class AbstractConfigCommand extends ContainerDebugCommand
             $bundle->build($container);
         }
     }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 }

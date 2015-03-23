@@ -40,7 +40,11 @@ abstract class MailHandler extends AbstractProcessingHandler
     /**
      * Send a mail with the given content
      *
+<<<<<<< HEAD
      * @param string $content formatted email body to be sent
+=======
+     * @param string $content
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @param array  $records the array of log records that formed this content
      */
     abstract protected function send($content, array $records);

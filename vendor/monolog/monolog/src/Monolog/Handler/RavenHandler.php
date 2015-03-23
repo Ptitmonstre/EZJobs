@@ -127,8 +127,11 @@ class RavenHandler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
+<<<<<<< HEAD
         // ensures user context is empty
         $this->ravenClient->user_context(null);
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         $options = array();
         $options['level'] = $this->logLevels[$record['level']];
         $options['tags'] = array();
@@ -148,10 +151,13 @@ class RavenHandler extends AbstractProcessingHandler
         }
         if (!empty($record['context'])) {
             $options['extra']['context'] = $record['context'];
+<<<<<<< HEAD
             if (!empty($record['context']['user'])) {
                 $this->ravenClient->user_context($record['context']['user']);
                 unset($options['extra']['context']['user']);
             }
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
         if (!empty($record['extra'])) {
             $options['extra']['extra'] = $record['extra'];

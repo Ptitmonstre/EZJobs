@@ -60,9 +60,12 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->event->isPropagationStopped());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacySetDispatcher()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
@@ -70,27 +73,36 @@ class EventTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->dispatcher, $this->event->getDispatcher());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetDispatcher()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->assertNull($this->event->getDispatcher());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacyGetName()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->assertNull($this->event->getName());
     }
 
+<<<<<<< HEAD
     /**
      * @group legacy
      */
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     public function testLegacySetName()
     {
         $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);

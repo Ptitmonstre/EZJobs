@@ -25,7 +25,11 @@ class TranslatorCacheTest extends \PHPUnit_Framework_TestCase
         $this->deleteTmpDir();
     }
 
+<<<<<<< HEAD
     protected function tearDown()
+=======
+    public function tearDown()
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
     {
         $this->deleteTmpDir();
     }

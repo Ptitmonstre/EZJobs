@@ -144,7 +144,11 @@ class FormExtension extends \Twig_Extension
     public function isSelectedChoice(ChoiceView $choice, $selectedValue)
     {
         if (is_array($selectedValue)) {
+<<<<<<< HEAD
             return in_array($choice->value, $selectedValue, true);
+=======
+            return false !== array_search($choice->value, $selectedValue, true);
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         }
 
         return $choice->value === $selectedValue;

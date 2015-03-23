@@ -60,8 +60,13 @@ cd /tmp/Symfony
 TARGET=/tmp/Symfony/vendor
 
 # Doctrine
+<<<<<<< HEAD
 cd $TARGET/doctrine/orm && rm -rf UPGRADE* build* tests tools lib/vendor
 cd $TARGET/doctrine/dbal && rm -rf build* tests lib/vendor
+=======
+cd $TARGET/doctrine/orm && rm -rf UPGRADE* build* bin tests tools lib/vendor
+cd $TARGET/doctrine/dbal && rm -rf bin build* tests lib/vendor
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 cd $TARGET/doctrine/common && rm -rf build* tests lib/vendor
 if [ -d $TARGET/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle ]; then
     cd $TARGET/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle && rm -rf Tests Resources/doc
@@ -114,7 +119,10 @@ find $TARGET -name .gitignore | xargs rm -rf -
 find $TARGET -name .gitmodules | xargs rm -rf -
 find $TARGET -name .svn | xargs rm -rf -
 
+<<<<<<< HEAD
 # With vendors
+=======
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 cd /tmp
 tar zcpf $DIR/Symfony_Standard_Vendors_$VERSION.tgz Symfony
 sudo rm -f $DIR/Symfony_Standard_Vendors_$VERSION.zip

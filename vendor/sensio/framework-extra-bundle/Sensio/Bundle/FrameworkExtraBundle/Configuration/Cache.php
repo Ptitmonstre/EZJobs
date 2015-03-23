@@ -93,7 +93,11 @@ class Cache extends ConfigurationAnnotation
     /**
      * Sets the number of seconds for the max-age cache-control header field.
      *
+<<<<<<< HEAD
      * @param int $maxage A number of seconds
+=======
+     * @param int     $maxage A number of seconds
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function setMaxAge($maxage)
     {
@@ -114,7 +118,11 @@ class Cache extends ConfigurationAnnotation
     /**
      * Sets the number of seconds for the s-maxage cache-control header field.
      *
+<<<<<<< HEAD
      * @param int $smaxage A number of seconds
+=======
+     * @param int     $smaxage A number of seconds
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function setSMaxAge($smaxage)
     {
@@ -145,7 +153,11 @@ class Cache extends ConfigurationAnnotation
     /**
      * Sets a response public.
      *
+<<<<<<< HEAD
      * @param bool $public A boolean value
+=======
+     * @param bool    $public A boolean value
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      */
     public function setPublic($public)
     {

@@ -18,7 +18,11 @@
 {{ route_name_prefix }}_create:
     path:     /create
     defaults: { _controller: "{{ bundle }}:{{ entity }}:create" }
+<<<<<<< HEAD
     methods:  POST
+=======
+    requirements: { _method: post }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 {% endif %}
 
 {% if 'edit' in actions %}
@@ -29,12 +33,20 @@
 {{ route_name_prefix }}_update:
     path:     /{id}/update
     defaults: { _controller: "{{ bundle }}:{{ entity }}:update" }
+<<<<<<< HEAD
     methods:  [POST, PUT]
+=======
+    requirements: { _method: post|put }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 {% endif %}
 
 {% if 'delete' in actions %}
 {{ route_name_prefix }}_delete:
     path:     /{id}/delete
     defaults: { _controller: "{{ bundle }}:{{ entity }}:delete" }
+<<<<<<< HEAD
     methods:  [POST, DELETE]
+=======
+    requirements: { _method: post|delete }
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 {% endif %}

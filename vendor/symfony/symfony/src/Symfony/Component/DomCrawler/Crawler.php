@@ -45,10 +45,16 @@ class Crawler extends \SplObjectStorage
     /**
      * Constructor.
      *
+<<<<<<< HEAD
      * @param mixed  $node       A Node to use as the base for the crawling
      * @param string $currentUri The current URI
      * @param string $baseHref   The base href value
      *
+=======
+     * @param mixed  $node A Node to use as the base for the crawling
+     * @param string $currentUri The current URI
+     * @param string $baseHref The base href value
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
      * @api
      */
     public function __construct($node = null, $currentUri = null, $baseHref = null)

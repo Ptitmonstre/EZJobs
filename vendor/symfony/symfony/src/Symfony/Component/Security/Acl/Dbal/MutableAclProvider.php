@@ -256,7 +256,11 @@ class MutableAclProvider extends AclProvider implements MutableAclProviderInterf
                 if (null === $propertyChanges['parentAcl'][1]) {
                     $sets[] = 'parent_object_identity_id = NULL';
                 } else {
+<<<<<<< HEAD
                     $sets[] = 'parent_object_identity_id = '.(int) $propertyChanges['parentAcl'][1]->getId();
+=======
+                    $sets[] = 'parent_object_identity_id = '.intval($propertyChanges['parentAcl'][1]->getId());
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
 
                 $this->regenerateAncestorRelations($acl);
@@ -478,7 +482,11 @@ QUERY;
             $query,
             $this->options['entry_table_name'],
             $classId,
+<<<<<<< HEAD
             null === $objectIdentityId ? 'NULL' : (int) $objectIdentityId,
+=======
+            null === $objectIdentityId ? 'NULL' : intval($objectIdentityId),
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             null === $field ? 'NULL' : $this->connection->quote($field),
             $aceOrder,
             $securityIdentityId,
@@ -596,7 +604,11 @@ QUERY;
             $classId,
             null === $oid ?
                 $this->connection->getDatabasePlatform()->getIsNullExpression('object_identity_id')
+<<<<<<< HEAD
                 : 'object_identity_id = '.(int) $oid,
+=======
+                : 'object_identity_id = '.intval($oid),
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             null === $field ?
                 $this->connection->getDatabasePlatform()->getIsNullExpression('field_name')
                 : 'field_name = '.$this->connection->quote($field),
@@ -879,7 +891,11 @@ QUERY;
 
                     $aceIdProperty = new \ReflectionProperty('Symfony\Component\Security\Acl\Domain\Entry', 'id');
                     $aceIdProperty->setAccessible(true);
+<<<<<<< HEAD
                     $aceIdProperty->setValue($ace, (int) $aceId);
+=======
+                    $aceIdProperty->setValue($ace, intval($aceId));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
                 }
             }
         }
@@ -953,7 +969,11 @@ QUERY;
 
                 $aceIdProperty = new \ReflectionProperty($ace, 'id');
                 $aceIdProperty->setAccessible(true);
+<<<<<<< HEAD
                 $aceIdProperty->setValue($ace, (int) $aceId);
+=======
+                $aceIdProperty->setValue($ace, intval($aceId));
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
             }
         }
     }

@@ -17,10 +17,17 @@
     ],
     "require": {
         "php": ">=5.3.3",
+<<<<<<< HEAD
         "twig/twig": "~1.13,>=1.13.1"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "~2.7",
+=======
+        "symfony/security-csrf": "~2.4",
+        "twig/twig": "~1.13,>=1.13.1"
+    },
+    "require-dev": {
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
         "symfony/finder": "~2.3",
         "symfony/form": "~2.6",
         "symfony/http-kernel": "~2.3",

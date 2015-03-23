@@ -14,11 +14,17 @@ namespace Monolog\Handler;
 use Monolog\Logger;
 
 /**
+<<<<<<< HEAD
  * Class to record a log on a NewRelic application.
  * Enabling New Relic High Security mode may prevent capture of useful information.
  *
  * @see https://docs.newrelic.com/docs/agents/php-agent
  * @see https://docs.newrelic.com/docs/accounts-partnerships/accounts/security/high-security
+=======
+ * Class to record a log on a NewRelic application
+ *
+ * @see https://docs.newrelic.com/docs/agents/php-agent
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
  */
 class NewRelicHandler extends AbstractProcessingHandler
 {

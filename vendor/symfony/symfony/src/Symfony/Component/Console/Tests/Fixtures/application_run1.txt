@@ -1,7 +1,11 @@
 Console Tool
 
 Usage:
+<<<<<<< HEAD
  command [options] [arguments]
+=======
+ [options] command [arguments]
+>>>>>>> d588d889bc061114bc89cc12e6930d3871de15c2
 
 Options:
  --help (-h)           Display this help message
